@@ -11,7 +11,7 @@ library(rmongodb)
 # and add it back in to the FWS ESA Work Plan Species collection in MongoDB.
 
 # First I need to grab the FWS ESA Work Plan Species collection from MongoDB
-fwsListFromMongo <- mongo(collection = "xxxxxxxxxxxxxxxxxx", db = "xxxxxxxx", url = "xxxxxxx")
+fwsListFromMongo <- mongo(collection = "xxxxxxxxxx", db = "xxxxxxxxxxx", url = "xxxxxxxxxxxxxx")
 fwsMongo <- fwsListFromMongo$find('{}', fields = '{"_id":1, "Submitted Data":1}')
 fwsMongo$`Scientific Name` <- fwsMongo$`Submitted Data`$`Scientific Name`
 fwsMongo <- fwsMongo[c("_id", "Scientific Name")]
@@ -49,3 +49,20 @@ for (i in 1:nrow(bisonInsertMongo)){
     bisonInsertMongo[i,]$inserted <- "done"
   }
 }
+
+# Add in proposed FWS decision timeframe fiscal year to Submitted Data subdocument
+Prelisting_Datcall_Species_List_FINAL_November_9$`Fiscal Year` <- Prelisting_Datcall_Species_List_FINAL_November_9$`Proposed FWS Decision Timeframe (Fiscal Year)`
+Prelisting_Datcall_Species_List_FINAL_November_9$`Proposed FWS Decision Timeframe (Fiscal Year)` <- NULL
+
+submittedUpdateMongo <- Prelisting_Datcall_Species_List_FINAL_November_9[c("Scientific Name", "Fiscal Year")]
+submittedUpdateMongo <- merge(submittedUpdateMongo, fwsMongo, by = "Scientific Name")
+submittedUpdateMongo$inserted <- NA
+for(i in 1:nrow(submittedUpdateMongo)){
+  if(is.na(submittedUpdateMongo[i,]$inserted)){
+    id <- submittedUpdateMongo[i,]$`_id`
+    fwsListFromMongo$update(query = paste0('{"_id": { "$oid" :"', id,'" } }'), update = paste0('{ "$set" : {"Submitted Data.Fiscal Year" :', submittedUpdateMongo[i,]$`Fiscal Year`,'}}'))
+    submittedUpdateMongo[i,]$inserted <- "done"
+  }
+}
+
+
