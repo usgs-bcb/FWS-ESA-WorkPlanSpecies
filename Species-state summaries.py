@@ -108,6 +108,7 @@ for sp in spp[:1]:
     lowers = [str(x) for x in us.STATES_CONTINENTAL]
     print(sp + ' state range summary')
     df2 = df1.filter(items=lowers, axis=0)
+    
     display(df2)
     print('\n\n') 
     
@@ -157,7 +158,7 @@ for sp in spp[:1]:
     fig1.suptitle(sp + " GAP range", fontsize=18)
     
     
-    # BISON
+    # BISON range
     # Convert column values
     statesGDF3['has_BISON_data(y/n)'] = [{0: "No", 1: "Yes"}[x] for x in statesGDF3['has_BISON_Data(y/n)']]
     # Plot
@@ -170,4 +171,18 @@ for sp in spp[:1]:
     ax2.set_axis_off()
     plt.axis('equal')
     fig2.suptitle(sp + " BISON range", fontsize=18)
+    
+    # BISON count
+    # Plot
+    fig3, ax3 = plt.subplots(1, figsize=(13, 7))
+    statesGDF3.plot(ax=ax3, column="BISON_occurrences", legend=True, 
+                    cmap='GnBu',
+                    categorical=True, linewidth=0.5, edgecolor='0.9')
+    ax3.set_ylim(23, 50)
+    ax3.set_xlim(-126, -66)
+    ax3.set_axis_off()
+    plt.axis('equal')
+    fig3.suptitle(sp + " - Number of BISON occurrences", fontsize=18)
+
+
 
