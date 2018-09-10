@@ -105,6 +105,6 @@ for sp in spp[:3]:
     lowers = [str(x) for x in us.STATES_CONTINENTAL]
     print(sp + ' state range summary')
     df2 = df1.filter(items=lowers, axis=0)
-    print(df2)
+    display(df2)
     print('\n\n')
     
