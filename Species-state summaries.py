@@ -49,22 +49,18 @@ sp = "Ambystoma barbouri"
 
 
 # Build dataframe to fill out
-columns=["FWS_range(y/n)", "BISON_occurrences", "SGCN_2015(y/n)", 
-         "SGCN_2005(y/n)", "GAP_habitat(%)", "status1(%)", "status2(%)", 
-         "status3(%)", "status4(%)"]
+columns=[]
 df0 = pd.DataFrame(index=[str(x) for x in us.STATES], columns=columns)
 df0.index.name="State"
 
 ##########################################################################  FWS
 # Fill out ECOS column with whether or not the ECOS account lists the state
 try:
-    FWS = esaWPSpecies.find_one({"Submitted Data.Scientific Name": sp})['FWS Range']
-    FWS_states = FWS['US State List']
+    Synth = esaWPSpecies.find_one({"Submitted Data.Scientific Name": sp})['Synthesis']
+    FWS_states = Synth['FWS Range List']
     for x in FWS_states:
-        for y in FWS['US States']:
-            if x == list(y.keys())[0]:
-                state_name = y[x]['name'].strip()
-                df0.loc[state_name, 'FWS_range(y/n)'] = 1
+        state_name = x.strip()
+        df0.loc[state_name, 'FWS_range(y/n)'] = 1
 except:
     print("No FWS range")
     
@@ -77,7 +73,16 @@ try:
         state_name = list(state.keys())[0]
         df0.loc[state_name, "BISON_occurrences"]=int(state[state_name])
 except:
-    print("No BISON")
+    print("No BISON records?")
+
+# Which states have bison occurrences?
+try:
+    BISON_states = Synth['States with BISON Occurrence Data']
+    for x in BISON_states:
+        state_name = x.strip()
+        df0.loc[state_name, 'Has_BISON_Data(y/n)'] = 1
+except:
+    print("ERROR getting bison state list")
 
 #########################################################################  SGCN 
 # Which states declared it SGCN?
