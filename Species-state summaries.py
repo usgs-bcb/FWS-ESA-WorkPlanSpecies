@@ -40,7 +40,7 @@ esaWPSpecies = bisDB["FWS_Work_Plan_Species"]
 
 # Get a list of species names to loop on.
 spp = [record["Submitted Data"]["Scientific Name"] for record in esaWPSpecies.find()]
-for sp in spp[:1]:
+for sp in spp[200:201]:
     common = esaWPSpecies.find_one({"Submitted Data.Scientific Name": sp})['Submitted Data']['Common Name']
     ############################################# Build empty dataframe to fill out
     columns=[]
@@ -222,7 +222,7 @@ for sp in spp[:1]:
         ax.set_ylim(23, 50)
         ax.set_xlim(-126, -66)
         ax.set_axis_off()
-        ax.set_title('Percent habitat in status 1 or 2')
+        ax.set_title('Percent of nationally protected (1 or 2) habitat')
     
     ax = axes[2,0]
     if ' habitat_3(%)' in statesGDF3.columns:
@@ -233,7 +233,7 @@ for sp in spp[:1]:
         ax.set_ylim(23, 50)
         ax.set_xlim(-126, -66)
         ax.set_axis_off()
-        ax.set_title('Percent habitat in status 3')
+        ax.set_title('Percent of national status 3 protected habitat')
         
     ax = axes[2,1]
     if 'BISON_data(y/n)' in statesGDF3.columns:
