@@ -41,7 +41,7 @@ esaWPSpecies = bisDB["FWS_Work_Plan_Species"]
 # Get a list of species names to loop on.
 spp = [record["Submitted Data"]["Scientific Name"] for record in esaWPSpecies.find()]
 for sp in spp[:1]:
-    
+    common = esaWPSpecies.find_one({"Submitted Data.Scientific Name": sp})['Submitted Data']['Common Name']
     ############################################# Build empty dataframe to fill out
     columns=[]
     df0 = pd.DataFrame(index=[str(x) for x in us.STATES], columns=columns)
@@ -63,7 +63,7 @@ for sp in spp[:1]:
         BISON_states = Synth['States with BISON Occurrence Data']
         for x in BISON_states:
             state_name = x.strip()
-            df0.loc[state_name, 'has_BISON_Data(y/n)'] = 1
+            df0.loc[state_name, 'BISON_data(y/n)'] = 1
     except:
         print("Exception -- BISON state list")
     
@@ -114,7 +114,7 @@ for sp in spp[:1]:
         CONUS_12 = CONUS['gapstat12ac']
         for j in GAPmet['State Metrics']:
             state_12 = j['gapstat12ac']
-            df0.loc[j['state_name'], 'habitat_1&2'] = 100.*(state_12/CONUS_12)
+            df0.loc[j['state_name'], ' habitat_1&2(%)'] = 100.*(state_12/CONUS_12)
     except:
         print('Exception -- GAP habitat 1 and 2')
     
@@ -124,7 +124,7 @@ for sp in spp[:1]:
         CONUS_3 = CONUS['gapstat3ac']
         for j in GAPmet['State Metrics']:
             state_3 = j['gapstat3ac']
-            df0.loc[j['state_name'], 'habitat_3'] = 100.*(state_3/CONUS_3)
+            df0.loc[j['state_name'], ' habitat_3(%)'] = 100.*(state_3/CONUS_3)
     except:
         print('Exception -- GAP habitat 1 and 2')
     
@@ -171,7 +171,7 @@ for sp in spp[:1]:
     
     # Create a figure to plot on
     fig, axes = plt.subplots(3,2, figsize = (14,11))
-    fig.suptitle(sp, fontsize=titleSize)
+    fig.suptitle("{0} ({1})".format(common.capitalize(), sp), fontsize=titleSize)
         
     ######################################################### SGCN 2015 vs. FWS
     ax = axes[0,0]
@@ -205,7 +205,7 @@ for sp in spp[:1]:
     if 'habitat_(%)' in statesGDF3.columns:
         # Plot
         statesGDF3.plot(ax=ax, column="habitat_(%)", legend=True, 
-                        categorical=False, linewidth=0.5, edgecolor='0.9', 
+                        categorical=False, linewidth=0.5, edgecolor='0.5', 
                         figsize=figsizeCon, cmap='YlGnBu')
         ax.set_ylim(23, 50)
         ax.set_xlim(-126, -66)
@@ -214,9 +214,9 @@ for sp in spp[:1]:
     
     ############################################################ GAP Protection
     ax = axes[1,1]
-    if 'habitat_1&2' in statesGDF3.columns:
+    if ' habitat_1&2(%)' in statesGDF3.columns:
         # Plot
-        statesGDF3.plot(ax=ax, column="habitat_1&2", 
+        statesGDF3.plot(ax=ax, column=" habitat_1&2(%)", 
                         categorical=False, linewidth=0.5, edgecolor='.5', 
                         figsize=figsizeCon, cmap='Greys', legend=True)
         ax.set_ylim(23, 50)
@@ -225,9 +225,9 @@ for sp in spp[:1]:
         ax.set_title('Percent habitat in status 1 or 2')
     
     ax = axes[2,0]
-    if 'habitat_3' in statesGDF3.columns:
+    if ' habitat_3(%)' in statesGDF3.columns:
         # Plot
-        statesGDF3.plot(ax=ax, column="habitat_3", 
+        statesGDF3.plot(ax=ax, column=" habitat_3(%)", 
                         categorical=False, linewidth=0.5, edgecolor='.5', 
                         figsize=figsizeCon, cmap='Reds', legend=True)
         ax.set_ylim(23, 50)
@@ -236,17 +236,18 @@ for sp in spp[:1]:
         ax.set_title('Percent habitat in status 3')
         
     ax = axes[2,1]
-    if 'has_BISON_Data(y/n)' in statesGDF3.columns:
+    if 'BISON_data(y/n)' in statesGDF3.columns:
         # Plot
-        statesGDF3.plot(ax=ax, column="has_BISON_Data(y/n)", 
+        statesGDF3.plot(ax=ax, column="BISON_data(y/n)", 
                         categorical=True, linewidth=0.5, edgecolor='.5', 
                         figsize=figsizeCat, legend=True)
         ax.set_axis_off()
         ax.set_title('Bison records in state')
+    plt.show()
       
         
 '''# Plot
-ax5 = statesGDF3.plot(column="habitat_3", 
+ax5 = statesGDF3.plot(column=" habitat_3(%)", 
                 categorical=False, linewidth=0.5, edgecolor='.5', 
                 figsize=(7.0,3.0), cmap='Reds', legend=True)
 #ax.set_ylim(23, 50)
