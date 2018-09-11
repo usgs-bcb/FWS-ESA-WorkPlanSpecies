@@ -40,7 +40,7 @@ esaWPSpecies = bisDB["FWS_Work_Plan_Species"]
 
 # Get a list of species names to loop on.
 spp = [record["Submitted Data"]["Scientific Name"] for record in esaWPSpecies.find()]
-for sp in spp[200:201]:
+for sp in spp[:1]:
     common = esaWPSpecies.find_one({"Submitted Data.Scientific Name": sp})['Submitted Data']['Common Name']
     ############################################# Build empty dataframe to fill out
     columns=[]
