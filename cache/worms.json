@@ -1,0 +1,1658 @@
+[
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Monadenia fidelis minor?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1352919,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1352919",
+                "scientificname": "Monadenia fidelis minor",
+                "authority": "(W.G. Binney, 1885)",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 230,
+                "rank": "Subspecies",
+                "valid_AphiaID": 1352919,
+                "valid_name": "Monadenia fidelis minor",
+                "valid_authority": "(W.G. Binney, 1885)",
+                "parentNameUsageID": 1079681,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Stylommatophora",
+                "family": "Xanthonychidae",
+                "genus": "Monadenia",
+                "citation": "MolluscaBase (2019). MolluscaBase. Monadenia fidelis minor (W.G. Binney, 1885). Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1352919 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1352919",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 0,
+                "isTerrestrial": 1,
+                "isExtinct": null,
+                "match_type": "exact",
+                "modified": "2019-06-19T09:20:11.930Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Stylommatophora"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Xanthonychidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Monadenia"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Monadenia fidelis minor"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Percina kusha?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1008726,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1008726",
+                "scientificname": "Percina kusha",
+                "authority": "Williams & Burkhead, 2007",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1008726,
+                "valid_name": "Percina kusha",
+                "valid_authority": "Williams & Burkhead, 2007",
+                "parentNameUsageID": 270338,
+                "kingdom": "Animalia",
+                "phylum": "Chordata",
+                "class": "Actinopterygii",
+                "order": "Perciformes",
+                "family": "Percidae",
+                "genus": "Percina",
+                "citation": "Froese, R. and D. Pauly. Editors. (2019). FishBase. Percina kusha Williams & Burkhead, 2007. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1008726 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1008726",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": null,
+                "match_type": "exact",
+                "modified": "2017-07-04T08:16:25.400Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Chordata"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Actinopterygii"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Perciformes"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Percidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Percina"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Percina kusha"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Boltonia montana?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1124563,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1124563",
+                "scientificname": "Boltonia montana",
+                "authority": "J.F.Towns. & Kar.-Castro",
+                "status": "uncertain",
+                "unacceptreason": "unassessed",
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1124563,
+                "valid_name": "Boltonia montana",
+                "valid_authority": "J.F.Towns. & Kar.-Castro",
+                "parentNameUsageID": 1076254,
+                "kingdom": "Plantae",
+                "phylum": "Tracheophyta",
+                "class": "Magnoliopsida",
+                "order": "Asterales",
+                "family": "Compositae",
+                "genus": "Boltonia",
+                "citation": "Flann, C. Global Compositae Checklist. Boltonia montana J.F.Towns. & Kar.-Castro. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1124563 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1124563",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 0,
+                "isTerrestrial": 1,
+                "isExtinct": null,
+                "match_type": "exact",
+                "modified": "2013-09-16T06:42:42Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Plantae"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Tracheophyta"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Magnoliopsida"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Asterales"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Compositae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Boltonia"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Boltonia montana"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis hamlinensis?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1347425,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1347425",
+                "scientificname": "Pyrgulopsis hamlinensis",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1347425,
+                "valid_name": "Pyrgulopsis hamlinensis",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis hamlinensis Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1347425 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1347425",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-05-21T07:34:04.520Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis hamlinensis"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis anguina?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1346748,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1346748",
+                "scientificname": "Pyrgulopsis anguina",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1346748,
+                "valid_name": "Pyrgulopsis anguina",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis anguina Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1346748 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1346748",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-05-16T06:59:02.523Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis anguina"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis saxatilis?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1349463,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1349463",
+                "scientificname": "Pyrgulopsis saxatilis",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1349463,
+                "valid_name": "Pyrgulopsis saxatilis",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis saxatilis Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1349463 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1349463",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-06-04T09:54:17.250Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis saxatilis"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis peculiaris?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1349139,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1349139",
+                "scientificname": "Pyrgulopsis peculiaris",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1349139,
+                "valid_name": "Pyrgulopsis peculiaris",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis peculiaris Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1349139 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1349139",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-06-02T15:20:53.070Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis peculiaris"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis coloradensis?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1346746,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1346746",
+                "scientificname": "Pyrgulopsis coloradensis",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1346746,
+                "valid_name": "Pyrgulopsis coloradensis",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis coloradensis Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1346746 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1346746",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-05-16T06:59:02.523Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis coloradensis"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis lata?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1347934,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1347934",
+                "scientificname": "Pyrgulopsis lata",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1347934,
+                "valid_name": "Pyrgulopsis lata",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis lata Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1347934 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1347934",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-05-24T18:50:52.923Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis lata"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis fausta?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1347085,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1347085",
+                "scientificname": "Pyrgulopsis fausta",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1347085,
+                "valid_name": "Pyrgulopsis fausta",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis fausta Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1347085 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1347085",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-05-19T05:39:00.943Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis fausta"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis breviloba?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1346819,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1346819",
+                "scientificname": "Pyrgulopsis breviloba",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1346819,
+                "valid_name": "Pyrgulopsis breviloba",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis breviloba Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1346819 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1346819",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-05-16T16:11:55.490Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis breviloba"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis planulata?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1349194,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1349194",
+                "scientificname": "Pyrgulopsis planulata",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1349194,
+                "valid_name": "Pyrgulopsis planulata",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis planulata Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1349194 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1349194",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-06-02T22:12:05.937Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis planulata"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis marcida?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1348502,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1348502",
+                "scientificname": "Pyrgulopsis marcida",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1348502,
+                "valid_name": "Pyrgulopsis marcida",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis marcida Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1348502 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1348502",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-05-28T12:01:46.767Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis marcida"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis hubbsi?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1347691,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1347691",
+                "scientificname": "Pyrgulopsis hubbsi",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1347691,
+                "valid_name": "Pyrgulopsis hubbsi",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis hubbsi Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1347691 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1347691",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-05-23T08:24:15.143Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis hubbsi"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis sublata?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1346623,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1346623",
+                "scientificname": "Pyrgulopsis sublata",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1346623,
+                "valid_name": "Pyrgulopsis sublata",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis sublata Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1346623 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1346623",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-05-15T10:01:00.797Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis sublata"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis landyei?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1347767,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1347767",
+                "scientificname": "Pyrgulopsis landyei",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1347767,
+                "valid_name": "Pyrgulopsis landyei",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis landyei Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1347767 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1347767",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-05-23T18:19:09.803Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis landyei"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis neritella?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1348851,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1348851",
+                "scientificname": "Pyrgulopsis neritella",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1348851,
+                "valid_name": "Pyrgulopsis neritella",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis neritella Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1348851 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1348851",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-05-30T08:47:59.023Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis neritella"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis serrata?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1349464,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1349464",
+                "scientificname": "Pyrgulopsis serrata",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1349464,
+                "valid_name": "Pyrgulopsis serrata",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis serrata Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1349464 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1349464",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-06-04T09:54:17.250Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis serrata"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis turbatrix?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 741083,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=741083",
+                "scientificname": "Pyrgulopsis turbatrix",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 741083,
+                "valid_name": "Pyrgulopsis turbatrix",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis turbatrix Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=741083 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:741083",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-05-15T10:01:00.797Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis turbatrix"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis sulcata?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1349702,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1349702",
+                "scientificname": "Pyrgulopsis sulcata",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1349702,
+                "valid_name": "Pyrgulopsis sulcata",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis sulcata Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1349702 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1349702",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-06-06T11:30:42.960Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis sulcata"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis deaconi?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1346853,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1346853",
+                "scientificname": "Pyrgulopsis deaconi",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1346853,
+                "valid_name": "Pyrgulopsis deaconi",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis deaconi Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1346853 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1346853",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-05-17T04:37:40.740Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis deaconi"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis sterilis?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1346620,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1346620",
+                "scientificname": "Pyrgulopsis sterilis",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1346620,
+                "valid_name": "Pyrgulopsis sterilis",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis sterilis Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1346620 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1346620",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-05-15T10:01:00.797Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis sterilis"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis orbiculata?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1348871,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1348871",
+                "scientificname": "Pyrgulopsis orbiculata",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1348871,
+                "valid_name": "Pyrgulopsis orbiculata",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis orbiculata Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1348871 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1348871",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-05-30T08:47:59.023Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis orbiculata"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Processing Metadata": {
+            "Status": "Error",
+            "Date Processed": "2019-07-01T19:08:16.587424",
+            "Summary Result": "Exact Match",
+            "Search URL": "http://www.marinespecies.org/rest/AphiaRecordsByName/Pyrgulopsis sathos?like=false&marine_only=false&offset=1"
+        },
+        "wormsData": [
+            {
+                "AphiaID": 1349406,
+                "url": "http://www.marinespecies.org/aphia.php?p=taxdetails&id=1349406",
+                "scientificname": "Pyrgulopsis sathos",
+                "authority": "Hershler, 1998",
+                "status": "accepted",
+                "unacceptreason": null,
+                "taxonRankID": 220,
+                "rank": "Species",
+                "valid_AphiaID": 1349406,
+                "valid_name": "Pyrgulopsis sathos",
+                "valid_authority": "Hershler, 1998",
+                "parentNameUsageID": 717226,
+                "kingdom": "Animalia",
+                "phylum": "Mollusca",
+                "class": "Gastropoda",
+                "order": "Littorinimorpha",
+                "family": "Hydrobiidae",
+                "genus": "Pyrgulopsis",
+                "citation": "MolluscaBase (2019). MolluscaBase. Pyrgulopsis sathos Hershler, 1998. Accessed through: World Register of Marine Species at: http://www.marinespecies.org/aphia.php?p=taxdetails&id=1349406 on 2019-07-01",
+                "lsid": "urn:lsid:marinespecies.org:taxname:1349406",
+                "isMarine": 0,
+                "isBrackish": 0,
+                "isFreshwater": 1,
+                "isTerrestrial": 0,
+                "isExtinct": 0,
+                "match_type": "exact",
+                "modified": "2019-06-03T17:21:10.487Z",
+                "taxonomy": [
+                    {
+                        "rank": "kingdom",
+                        "name": "Animalia"
+                    },
+                    {
+                        "rank": "phylum",
+                        "name": "Mollusca"
+                    },
+                    {
+                        "rank": "class",
+                        "name": "Gastropoda"
+                    },
+                    {
+                        "rank": "order",
+                        "name": "Littorinimorpha"
+                    },
+                    {
+                        "rank": "family",
+                        "name": "Hydrobiidae"
+                    },
+                    {
+                        "rank": "genus",
+                        "name": "Pyrgulopsis"
+                    },
+                    {
+                        "rank": "Species",
+                        "name": "Pyrgulopsis sathos"
+                    }
+                ]
+            }
+        ]
+    }
+]
