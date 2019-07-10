@@ -6,6 +6,10 @@ As a starting point for this work, we used a spreadsheet prepared internally to 
 # Processing Logic
 The building of this dataset is based in a set of logical processes we are building for a variety of work on a platform called the Biogeographic Information System. The codes that consult other data sources and assemble information for use in this data release come from a Python package called [bispy](https://github.com/usgs-bcb/bispy). The particular workflows described and executed here can be operated in a variety of ways from producing something like the local cache of data we include in this data release to running operationally on a cloud system, checking sources and building data continuously.
 
+If you want to run the workflow here, you will need to install the bispy package from source.
+
+pip install git+git://github.com/usgs-bcb/bispy.git
+
 # Workflow
 Some of the steps in this system build upon each other while others can be operated independently. The first couple of steps do build out the foundation for subsequent work and need to be run first.
 
