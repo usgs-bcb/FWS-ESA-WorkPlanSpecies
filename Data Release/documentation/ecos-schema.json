@@ -1,0 +1,610 @@
+{
+  "definitions": {
+    "items": {
+      "$id": "#/items",
+      "type": [
+        "object",
+        "array"
+      ],
+      "title": "Generic container for items in a dataset",
+      "description": "A JSON array or object property containing one or more items in a dataset or data structure within a dataset."
+    },
+    "doi": {
+      "$id": "#doi",
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Digital Object Identifier",
+      "description": "A digital object identifier for or associated with a record. May be in the form of an HTTP url or a standalone identifier.",
+      "examples": [
+        "http://dx.doi.org/10.2305/IUCN.UK.2004.RLTS.T59435A11941314.en",
+        "10.2305/IUCN.UK.2004.RLTS.T59435A11941314.en"
+      ]
+    },
+    "resolvable_identifier": {
+      "$id": "#resolvable_identifier",
+      "type": "string",
+      "title": "Resolvable Identifier",
+      "description": "Some form of resolvable identifier for a record that returns a response when accessed over an included protocol such as HTTP. May or may not provide for content negotiation.",
+      "examples": [
+        "https://www.iucnredlist.org/species/59435/11941314"
+      ]
+    },
+    "citation_string": {
+      "$id": "#citation_string",
+      "type": "string",
+      "title": "Citation String",
+      "description": "A citation string directly associated with a resource record. Can be any parseable citation string."
+    },
+    "record_date": {
+      "$id": "#record_date",
+      "type": "string",
+      "title": "The date that a record was considered valid from its source",
+      "description": "A date supplied by a record source indicating when it was considered valid or current.",
+      "examples": [
+        "2004-04-30"
+      ]
+    },
+    "document_title": {
+      "$id": "#document_title",
+      "type": "string",
+      "title": "The title for a document of any type",
+      "description": "A generic property used to hold the title for a document.",
+      "examples": [
+        "War and Peace"
+      ]
+    },
+    "document_link": {
+      "$id": "#document_title",
+      "type": "string",
+      "title": "A web link (URL) to access a document online",
+      "description": "A generic property used to hold a resolvable link to a document of any type.",
+      "examples": [
+        "https://www.gutenberg.org/files/2600/2600-h/2600-h.htm"
+      ]
+    },
+    "publication_date": {
+      "$id": "#publication_date",
+      "type": "string",
+      "title": "Date that a document or article was published",
+      "description": "A generic property used to hold a date at multiple levels of precision that a document or article was published.",
+      "examples": [
+        "1869"
+      ]
+    },
+    "date_created": {
+      "$id": "#date_created",
+      "type": "string",
+      "title": "Date Created",
+      "description": "Date/time at various levels of precision and formatting that a record was created standardized from source information.",
+      "examples": [
+        "1997-05-06 15:49:08"
+      ]
+    },
+    "date_modified": {
+      "$id": "#date_modified",
+      "type": "string",
+      "title": "Date Modified",
+      "description": "Date/time at various levels of precision and formatting that a record was modified standardized from source information.",
+      "examples": [
+        "2009-09-01 00:00:00"
+      ]
+    },
+    "biological_taxonomy": {
+      "$id": "#biological_taxonomy",
+      "type": "array",
+      "title": "Biological Taxonomy",
+      "description": "An array containing the full taxonomic hierarchy for the subject taxon with rank and name standardized into a useful form from source data.",
+      "items": {
+        "$ref": "#/definitions/items",
+        "required": [
+          "rank",
+          "name"
+        ]
+      },
+      "properties": {
+        "rank": {
+          "$id": "#/biological_taxonomy/items/properties/rank",
+          "type": "string",
+          "title": "Taxonomic Rank",
+          "description": "The specific rank in the taxonomic hierarchy.",
+          "examples": [
+            "Kingdom"
+          ]
+        },
+        "name": {
+          "$id": "#/biological_taxonomy/items/properties/name",
+          "type": "string",
+          "title": "Taxonomic Name",
+          "description": "The scientific name at the hierarchical rank.",
+          "examples": [
+            "Animalia"
+          ]
+        }
+      }
+    },
+  "parameters": {
+    "$id": "#/parameters",
+    "type": [
+      "object",
+      "array"
+    ],
+    "title": "Parameters",
+    "description": "An object or array that contains context-specific parameters as key/value pairs used as input to generate a record in a dataset."
+  },
+  "processing_metadata": {
+    "$id": "#processing_metadata",
+    "type": "object",
+    "title": "Object containing information about the processing of a record in a dataset",
+    "description": "A container object that contains properties describing the specific processing details for a given record within a dataset. Contains standardized properties describing the processing.",
+    "required": [
+      "status",
+      "date_processed",
+      "api"
+    ],
+    "properties": {
+      "status": {
+        "$id": "#status",
+        "type": "string",
+        "title": "The overall status of the record processing step",
+        "description": "Describes one of three standardized states for the processing of a given record.",
+        "default": "failure",
+        "examples": [
+          "success",
+          "failure",
+          "error"
+        ]
+      },
+      "date_processed": {
+        "$id": "#date_processed",
+        "type": "string",
+        "title": "The data and time that the process for a given record was conducted",
+        "description": "Date time stamp in ISO8601 format denoting the point when the processing of the record occurred. Can be used to evaluate record currency with original source and trigger updates.",
+        "examples": [
+          "2019-07-23T16:29:02.377774"
+        ]
+      },
+      "api": {
+        "$id": "#api",
+        "type": "string",
+        "title": "A resolvable API string used to obtain or generate a record in a dataset",
+        "description": "Some form of resolvable Application Programming Interface such as a REST URL that was used to generate the record being documented. Often passed through a function of some kind to process the results.",
+        "format": "uri"
+      },
+      "status_message": {
+        "$id": "#status_message",
+        "type": "string",
+        "title": "Message with further details about the status of a record",
+        "description": "Per dataset, this string contains context-specific details about the status or state of a record that was processed."
+      },
+      "details": {
+        "$id": "#details",
+        "type": "array",
+        "title": "Data Processing Details",
+        "description": "A list of statements describing additional specific details about the process of generating a record."
+      }
+    }
+  }
+},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://data.usgs.gov/property_registry/",
+  "type": [
+    "array",
+    "object"
+  ],
+  "title": "ECOS Species Web Scrape Collection",
+  "description": "A dataset containing species information scraped from the USFWS Ecological Conservation Online System web pages. Certain properties on species from the USFWS databases could not be accessed through any other open API. Data were assembled using a function build into the experimental bispy software package (https://github.com/usgs-bcb/bispy).",
+  "items": {"$ref": "#/definitions/items"},
+    "properties": {
+      "processing_metadata": {"$ref": "#/definitions/processing_metadata"},
+      "ecos_species_summary": {
+        "$id": "#ecos_species_summary",
+        "type": [
+          "object",
+          "null"
+        ],
+        "title": "ECOS Species Summary Information",
+        "description": "An object containing all of the accessible and useful information bits, including lists of available documents, from an ECOS Species web page.",
+        "required": [
+          "Scientific Name",
+          "Current Listing Status Summary"
+        ],
+        "properties": {
+          "ITIS TSN": {
+            "$id": "#ITIS TSN",
+            "type": [
+              "string",
+              "null"
+            ],
+            "examples": [
+              "609899"
+            ],
+            "title": "ITIS Taxonomic Serial Number",
+            "description": "The Taxonomic Serial Number from the Integrated Taxonomic Information System associated with the ECOS species record (ref: http://www.itis.gov)."
+          },
+          "Scientific Name": {
+            "$id": "#Scientific Name",
+            "type": [
+              "string",
+              "null"
+            ],
+            "examples": [
+              "Acroneuria kosztarabi"
+            ],
+            "title": "Scientific name for a biological species",
+            "description": "The scientific or latin name for a species that was used as an input parameter to an API"
+          },
+          "Common Name": {
+            "$id": "#Common Name",
+            "type": [
+              "string",
+              "null"
+            ],
+            "examples": [
+              "Virginia stone"
+            ],
+            "title": "Common or vernacular name for a biological species",
+            "description": "The provided common name for the species."
+          },
+          "Current Listing Status Summary": {
+            "$id": "#Current Listing Status Summary",
+            "type": [
+              "array",
+              "null"
+            ],
+            "title": "Current Listing Status",
+            "description": "Species may have one or more listing status designations. The values for these items were scraped and slightly transformed from a table on the web pages.",
+            "items": {
+              "$id": "#items",
+              "type": [
+                "object",
+                "null"
+              ],
+              "title": "Generic container for items in a dataset",
+              "description": "A JSON array or object property containing one or more items in a dataset",
+              "required": [
+                "Status",
+                "Date Listed",
+                "Lead Region",
+                "Where Listed"
+              ],
+              "properties": {
+                "Status": {
+                  "$id": "#Status",
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "examples": [
+                    "Under Review"
+                  ],
+                  "title": "Listing Status",
+                  "description": "The listing status designation. Species may have more than one listing status for different populations."
+                },
+                "Date Listed": {
+                  "$id": "#Date Listed",
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "title": "Date Listed",
+                  "description": "Date the listing status was applied"
+                },
+                "Lead Region": {
+                  "$id": "#Lead Region",
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "examples": [
+                    "Northeast Region (Region 5)"
+                  ],
+                  "title": "Lead FWS Region",
+                  "description": "The lead USFWS Region responsible for the species listing process."
+                },
+                "Lead Region_link": {
+                  "$id": "#Lead Region_link",
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "title": "Lead Region Link",
+                  "description": "Web link (URL) to the lead region extracted from the text.",
+                  "examples": [
+                    "http://www.fws.gov/northeast/"
+                  ]
+                },
+                "Where Listed": {
+                  "$id": "#Where Listed",
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "title": "Where Listed",
+                  "description": "An indication of where, geographically, the species is listed.",
+                  "examples": [
+                    "Wherever found"
+                  ]
+                }
+              }
+            }
+          },
+          "Federal Register Documents": {
+            "$id": "#Federal Register Documents",
+            "type": [
+              "array",
+              "null"
+            ],
+            "title": "Federal Register Documents",
+            "description": "A listing of the Federal Register documents associated with the species listing process, extracted from a table generated on the web pages.",
+            "items": {
+              "$id": "#items",
+              "type": [
+                "object",
+                "null"
+              ],
+              "title": "Generic container for items in a dataset",
+              "description": "A JSON array or object property containing one or more items in a dataset",
+              "required": [
+                "publication_date",
+                "document_title",
+                "Citation Page"
+              ],
+              "properties": {
+                "publication_date": {"$ref": "#/definitions/publication_date"},
+                "document_title": {"$ref": "#/definitions/document_title"},
+                "document_link": {"$ref": "#/definitions/document_link"},
+                "Citation Page": {
+                  "$id": "#Citation Page",
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "title": "Citation Page",
+                  "description": "The citation location in the Federal Register notice.",
+                  "examples": [
+                    "83 FR 50582 50610"
+                  ]
+                }
+              }
+            }
+          },
+          "Special Rule Publications": {
+            "$id": "#Special Rule Publications",
+            "type": [
+              "array",
+              "null"
+            ],
+            "title": "Special Rule Publications",
+            "description": "Documents describing special rules published in the Federal Register.",
+            "items": {
+              "$id": "#items",
+              "type": [
+                "object",
+                "null"
+              ],
+              "title": "Generic container for items in a dataset",
+              "description": "A JSON array or object property containing one or more items in a dataset",
+              "required": [
+                "publication_date",
+                "document_title",
+                "Citation Page"
+              ],
+              "properties": {
+                "publication_date": {"$ref": "#/definitions/publication_date"},
+                "document_title": {"$ref": "#/definitions/document_title"},
+                "document_link": {"$ref": "#/definitions/document_link"},
+                "Citation Page": {
+                  "$id": "#Citation Page",
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "title": "Citation Page",
+                  "description": "The citation location in the Federal Register notice.",
+                  "examples": [
+                    "83 FR 50582 50610"
+                  ]
+                }
+              }
+            }
+          },
+          "Current Recovery Plan(s)": {
+            "$id": "#Current Recovery Plan(s)",
+            "type": [
+              "array",
+              "null"
+            ],
+            "title": "Current Recovery Plans",
+            "description": "A listing of documents containing recovery plans for the species",
+            "items": {
+              "$id": "#items",
+              "type": [
+                "object",
+                "null"
+              ],
+              "title": "Generic container for items in a dataset",
+              "description": "A JSON array or object property containing one or more items in a dataset",
+              "required": [
+                "publication_date",
+                "document_link",
+                "Plan Action Status",
+                "Plan Status"
+              ],
+              "properties": {
+                "publication_date": {"$ref": "#/definitions/publication_date"},
+                "document_title": {"$ref": "#/definitions/document_title"},
+                "document_link": {"$ref": "#/definitions/document_link"},
+                "Plan Action Status": {
+                  "$id": "#Plan Action Status",
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "title": "The Plan action status Schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "examples": [
+                    "View Implementation Progress"
+                  ]
+                },
+                "Plan Action Status_link": {
+                  "$id": "#Plan Action Status_link",
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "title": "The Plan action status_link Schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "examples": [
+                    "https://ecos.fws.gov/ecp0/reports/implementation-activity-status-ore-report?documentId=1009911&entityId=9220"
+                  ]
+                },
+                "Plan Status": {
+                  "$id": "#Plan Status",
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "title": "The Plan status Schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "examples": [
+                    "Final"
+                  ]
+                }
+              }
+            }
+          },
+          "Other Recovery Documents": {
+            "$id": "#Other Recovery Documents",
+            "type": [
+              "array",
+              "null"
+            ],
+            "title": "Other Recovery Documents",
+            "description": "A listing of other documents associated with recovery of the species.",
+            "items": {
+              "$id": "#items",
+              "type": [
+                "object",
+                "null"
+              ],
+              "title": "Generic container for items in a dataset",
+              "description": "A JSON array or object property containing one or more items in a dataset",
+              "required": [
+                "publication_date",
+                "Citation Page",
+                "document_title",
+                "document_link",
+                "Document Type"
+              ],
+              "properties": {
+                "publication_date": {"$ref": "#/definitions/publication_date"},
+                "document_title": {"$ref": "#/definitions/document_title"},
+                "document_link": {"$ref": "#/definitions/document_link"},
+                "Citation Page": {
+                  "$id": "#Citation Page",
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "title": "Citation Page",
+                  "description": "The citation location in the Federal Register notice.",
+                  "examples": [
+                    "83 FR 50582 50610"
+                  ]
+                },
+                "Document Type": {
+                  "$id": "#Document Type",
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "title": "Document Type",
+                  "description": "A text description of the document type.",
+                  "examples": [
+                    "Recovery Plan Draft, Document Availability"
+                  ]
+                }
+              }
+            }
+          },
+          "Habitat Conservation Plans (HCP)": {
+            "$id": "#Habitat Conservation Plans (HCP)",
+            "type": [
+              "array",
+              "null"
+            ],
+            "title": "Habitat Conservation Plans",
+            "description": "A listing of the Habitat Conservation Plans and available links for the species",
+            "items": {
+              "$id": "#items",
+              "type": [
+                "object",
+                "null"
+              ],
+              "title": "Generic container for items in a dataset",
+              "description": "A JSON array or object property containing one or more items in a dataset",
+              "required": [
+                "HCP Plan Summaries"
+              ],
+              "properties": {
+                "HCP Plan Summaries": {
+                  "$id": "#HCP Plan Summaries",
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "title": "HCP Summary Statement",
+                  "description": "A summary statement for the Habitat Conservation Plan",
+                  "examples": [
+                    "Boise Cascade Low-effect HCP for the Northern Spotted Owl (transferred to Boise Central Washington Land & Timber , LLC.  Permit was subsequently transferred to Western Pacific Timberlands, LLC.)"
+                  ]
+                },
+                "HCP Plan Summaries_link": {
+                  "$id": "#HCP Plan Summaries_link",
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "title": "HCP Link",
+                  "description": "A web link (URL) to the Habitat Conservation Plan.",
+                  "examples": [
+                    "https://ecos.fws.gov/ecp0/conservationPlan/plan?plan_id=1020"
+                  ]
+                }
+              }
+            }
+          },
+          "Five Year Review": {
+            "$id": "#Five Year Review",
+            "type": [
+              "array",
+              "null"
+            ],
+            "title": "Five Year Review",
+            "description": "A listing of Five-year reviews available for the species.",
+            "items": {
+              "$id": "#items",
+              "type": [
+                "object",
+                "null"
+              ],
+              "title": "The Items Schema",
+              "description": "An explanation about the purpose of this instance.",
+              "required": [
+                "publication_date",
+                "document_title",
+                "document_link"
+              ],
+              "properties": {
+                "publication_date": {"$ref": "#/definitions/publication_date"},
+                "document_title": {"$ref": "#/definitions/document_title"},
+                "document_link": {"$ref": "#/definitions/document_link"}
+              }
+            }
+          }
+        }
+      }
+    }
+  }

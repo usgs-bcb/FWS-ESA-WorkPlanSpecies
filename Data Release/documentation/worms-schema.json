@@ -1,0 +1,510 @@
+{
+  "definitions": {
+    "items": {
+      "$id": "#/items",
+      "type": [
+        "object",
+        "array"
+      ],
+      "title": "Generic container for items in a dataset",
+      "description": "A JSON array or object property containing one or more items in a dataset or data structure within a dataset."
+    },
+    "doi": {
+      "$id": "#doi",
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Digital Object Identifier",
+      "description": "A digital object identifier for or associated with a record. May be in the form of an HTTP url or a standalone identifier.",
+      "examples": [
+        "http://dx.doi.org/10.2305/IUCN.UK.2004.RLTS.T59435A11941314.en",
+        "10.2305/IUCN.UK.2004.RLTS.T59435A11941314.en"
+      ]
+    },
+    "resolvable_identifier": {
+      "$id": "#resolvable_identifier",
+      "type": "string",
+      "title": "Resolvable Identifier",
+      "description": "Some form of resolvable identifier for a record that returns a response when accessed over an included protocol such as HTTP. May or may not provide for content negotiation.",
+      "examples": [
+        "https://www.iucnredlist.org/species/59435/11941314"
+      ]
+    },
+    "citation_string": {
+      "$id": "#citation_string",
+      "type": "string",
+      "title": "Citation String",
+      "description": "A citation string directly associated with a resource record. Can be any parseable citation string."
+    },
+    "record_date": {
+      "$id": "#record_date",
+      "type": "string",
+      "title": "The date that a record was considered valid from its source",
+      "description": "A date supplied by a record source indicating when it was considered valid or current.",
+      "examples": [
+        "2004-04-30"
+      ]
+    },
+    "document_title": {
+      "$id": "#document_title",
+      "type": "string",
+      "title": "The title for a document of any type",
+      "description": "A generic property used to hold the title for a document.",
+      "examples": [
+        "War and Peace"
+      ]
+    },
+    "document_link": {
+      "$id": "#document_title",
+      "type": "string",
+      "title": "A web link (URL) to access a document online",
+      "description": "A generic property used to hold a resolvable link to a document of any type.",
+      "examples": [
+        "https://www.gutenberg.org/files/2600/2600-h/2600-h.htm"
+      ]
+    },
+    "publication_date": {
+      "$id": "#publication_date",
+      "type": "string",
+      "title": "Date that a document or article was published",
+      "description": "A generic property used to hold a date at multiple levels of precision that a document or article was published.",
+      "examples": [
+        "1869"
+      ]
+    },
+    "date_created": {
+      "$id": "#date_created",
+      "type": "string",
+      "title": "Date Created",
+      "description": "Date/time at various levels of precision and formatting that a record was created standardized from source information.",
+      "examples": [
+        "1997-05-06 15:49:08"
+      ]
+    },
+    "date_modified": {
+      "$id": "#date_modified",
+      "type": "string",
+      "title": "Date Modified",
+      "description": "Date/time at various levels of precision and formatting that a record was modified standardized from source information.",
+      "examples": [
+        "2009-09-01 00:00:00"
+      ]
+    },
+    "biological_taxonomy": {
+      "$id": "#biological_taxonomy",
+      "type": "array",
+      "title": "Biological Taxonomy",
+      "description": "An array containing the full taxonomic hierarchy for the subject taxon with rank and name standardized into a useful form from source data.",
+      "items": {
+        "$ref": "#/definitions/items",
+        "required": [
+          "rank",
+          "name"
+        ]
+      },
+      "properties": {
+        "rank": {
+          "$id": "#/biological_taxonomy/items/properties/rank",
+          "type": "string",
+          "title": "Taxonomic Rank",
+          "description": "The specific rank in the taxonomic hierarchy.",
+          "examples": [
+            "Kingdom"
+          ]
+        },
+        "name": {
+          "$id": "#/biological_taxonomy/items/properties/name",
+          "type": "string",
+          "title": "Taxonomic Name",
+          "description": "The scientific name at the hierarchical rank.",
+          "examples": [
+            "Animalia"
+          ]
+        }
+      }
+    },
+  "parameters": {
+    "$id": "#/parameters",
+    "type": [
+      "object",
+      "array"
+    ],
+    "title": "Parameters",
+    "description": "An object or array that contains context-specific parameters as key/value pairs used as input to generate a record in a dataset."
+  },
+  "processing_metadata": {
+    "$id": "#processing_metadata",
+    "type": "object",
+    "title": "Object containing information about the processing of a record in a dataset",
+    "description": "A container object that contains properties describing the specific processing details for a given record within a dataset. Contains standardized properties describing the processing.",
+    "required": [
+      "status",
+      "date_processed",
+      "api"
+    ],
+    "properties": {
+      "status": {
+        "$id": "#status",
+        "type": "string",
+        "title": "The overall status of the record processing step",
+        "description": "Describes one of three standardized states for the processing of a given record.",
+        "default": "failure",
+        "examples": [
+          "success",
+          "failure",
+          "error"
+        ]
+      },
+      "date_processed": {
+        "$id": "#date_processed",
+        "type": "string",
+        "title": "The data and time that the process for a given record was conducted",
+        "description": "Date time stamp in ISO8601 format denoting the point when the processing of the record occurred. Can be used to evaluate record currency with original source and trigger updates.",
+        "examples": [
+          "2019-07-23T16:29:02.377774"
+        ]
+      },
+      "api": {
+        "$id": "#api",
+        "type": "string",
+        "title": "A resolvable API string used to obtain or generate a record in a dataset",
+        "description": "Some form of resolvable Application Programming Interface such as a REST URL that was used to generate the record being documented. Often passed through a function of some kind to process the results.",
+        "format": "uri"
+      },
+      "status_message": {
+        "$id": "#status_message",
+        "type": "string",
+        "title": "Message with further details about the status of a record",
+        "description": "Per dataset, this string contains context-specific details about the status or state of a record that was processed."
+      },
+      "details": {
+        "$id": "#details",
+        "type": "array",
+        "title": "Data Processing Details",
+        "description": "A list of statements describing additional specific details about the process of generating a record."
+      }
+    }
+  }
+},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://data.usgs.gov/property_registry/",
+  "type": "array",
+  "title": "WoRMS Data Cache",
+  "description": "A cache of records based on searching for species names from the World Register of Marine Species (http://marinespecies.org/). Data were assembled using a search function build into the experimental bispy software package (https://github.com/usgs-bcb/bispy).",
+  "items": {"$ref": "#/definitions/items"},
+    "properties": {
+      "processing_metadata": {"$ref": "#/definitions/processing_metadata"},
+      "worms_data": {
+        "$id": "#/items/properties/worms_data",
+        "type": "array",
+        "title": "WoRMS Data",
+        "description": "A list of one or more minimally processed WoRMS records resulting from the search.",
+        "items": {
+          "$id": "#/items/properties/worms_data/items",
+          "type": "object",
+          "title": "WoRMS Documents Container",
+          "description": "A generic container for the WoRMS documents making up the record.",
+          "required": [
+            "AphiaID",
+            "url",
+            "scientificname",
+            "authority",
+            "status",
+            "unacceptreason",
+            "taxonRankID",
+            "rank",
+            "valid_AphiaID",
+            "valid_name",
+            "valid_authority",
+            "parentNameUsageID",
+            "kingdom",
+            "phylum",
+            "class",
+            "order",
+            "family",
+            "genus",
+            "citation",
+            "lsid",
+            "isMarine",
+            "isBrackish",
+            "isFreshwater",
+            "isTerrestrial",
+            "isExtinct",
+            "match_type",
+            "modified",
+            "taxonomy"
+          ],
+          "properties": {
+            "resolvable_identifier": {"$ref":  "#/definitions/resolvable_identifier"},
+            "citation_string": {"$ref": "#/definitions/citation_string"},
+            "AphiaID": {
+              "$id": "#/items/properties/worms_data/items/properties/AphiaID",
+              "type": "integer",
+              "title": "Aphia ID",
+              "description": "Unique, persistent identifer for each taxon in WoRMS.",
+              "examples": [
+                1352919
+              ]
+            },
+            "scientificname": {
+              "$id": "#/items/properties/worms_data/items/properties/scientificname",
+              "type": "string",
+              "title": "Scientific Name",
+              "description": "Full scientific (latin) name for the taxon.",
+              "examples": [
+                "Monadenia fidelis minor"
+              ]
+            },
+            "authority": {
+              "$id": "#/items/properties/worms_data/items/properties/authority",
+              "type": "string",
+              "title": "Authority",
+              "description": "Citation to the relevant authority for the taxonomic identification.",
+              "examples": [
+                "(W.G. Binney, 1885)"
+              ]
+            },
+            "status": {
+              "$id": "#/items/properties/worms_data/items/properties/status",
+              "type": "string",
+              "title": "Status",
+              "description": "Indication of the status of the taxoinomic record.",
+              "examples": [
+                "accepted"
+              ]
+            },
+            "unacceptreason": {
+              "$id": "#/items/properties/worms_data/items/properties/unacceptreason",
+              "type": "null",
+              "title": "Reason Record is Unaccepted",
+              "description": "If a record indicated an unaccept status, this property provides a statement about the reason.",
+              "examples": [
+                null
+              ]
+            },
+            "taxonRankID": {
+              "$id": "#/items/properties/worms_data/items/properties/taxonRankID",
+              "type": "integer",
+              "title": "Taxon Rank ID",
+              "description": "An internal identifier for the taxonomic rank.",
+              "examples": [
+                230
+              ]
+            },
+            "rank": {
+              "$id": "#/items/properties/worms_data/items/properties/rank",
+              "type": "string",
+              "title": "Taxonomic Rank",
+              "description": "Specific level of the subject record in the taxonomic hierarchy.",
+              "examples": [
+                "Subspecies"
+              ]
+            },
+            "valid_AphiaID": {
+              "$id": "#/items/properties/worms_data/items/properties/valid_AphiaID",
+              "type": "integer",
+              "title": "Valid Aphia ID",
+              "description": "The valid Aphia ID for the subject WoRMS record. If the record is invalid, the valid_AphiaID property will point to the valid record. Otherwise, it will match the aphiaID value.",
+              "examples": [
+                1352919
+              ]
+            },
+            "valid_name": {
+              "$id": "#/items/properties/worms_data/items/properties/valid_name",
+              "type": "string",
+              "title": "Valid Name",
+              "description": "The valid name for the subject WoRMS record. If the record is invalid, the valid_name property will come from the valid record. Otherwise, it will match the scientificname value.",
+              "examples": [
+                "Monadenia fidelis minor"
+              ]
+            },
+            "valid_authority": {
+              "$id": "#/items/properties/worms_data/items/properties/valid_authority",
+              "type": "string",
+              "title": "Valid Taxonomic Authority",
+              "description": "The valid taxonomic authority for the subject WoRMS record. If the record is invalid, the valid_authority property will come from the valid record. Otherwise, it will match the authority value.",
+              "examples": [
+                "(W.G. Binney, 1885)"
+              ]
+            },
+            "parentNameUsageID": {
+              "$id": "#/items/properties/worms_data/items/properties/parentNameUsageID",
+              "type": "integer",
+              "title": "Parent Name Usage ID",
+              "description": "The AphiaID of the direct taxonomic parent.",
+              "examples": [
+                1079681
+              ]
+            },
+            "kingdom": {
+              "$id": "#/items/properties/worms_data/items/properties/kingdom",
+              "type": "string",
+              "title": "Kingdom",
+              "description": "The taxonomic kingdom for the record.",
+              "examples": [
+                "Animalia"
+              ]
+            },
+            "phylum": {
+              "$id": "#/items/properties/worms_data/items/properties/phylum",
+              "type": "string",
+              "title": "Phylum",
+              "description": "The taxonomic phylum for the record.",
+              "examples": [
+                "Mollusca"
+              ]
+            },
+            "class": {
+              "$id": "#/items/properties/worms_data/items/properties/class",
+              "type": "string",
+              "title": "Class",
+              "description": "The taxonomic class for the record.",
+              "examples": [
+                "Gastropoda"
+              ]
+            },
+            "order": {
+              "$id": "#/items/properties/worms_data/items/properties/order",
+              "type": "string",
+              "title": "Order",
+              "description": "The taxonomic order for the record.",
+              "examples": [
+                "Stylommatophora"
+              ]
+            },
+            "family": {
+              "$id": "#/items/properties/worms_data/items/properties/family",
+              "type": "string",
+              "title": "Family",
+              "description": "The taxonomic family for the record.",
+              "examples": [
+                "Xanthonychidae"
+              ]
+            },
+            "genus": {
+              "$id": "#/items/properties/worms_data/items/properties/genus",
+              "type": "string",
+              "title": "Genus",
+              "description": "The taxonomic genus for the record.",
+              "examples": [
+                "Monadenia"
+              ]
+            },
+            "lsid": {
+              "$id": "#/items/properties/worms_data/items/properties/lsid",
+              "type": "string",
+              "title": "LSID",
+              "description": "A URN syntax form of unique, persistent identifier for a WoRMS record.",
+              "examples": [
+                "urn:lsid:marinespecies.org:taxname:1352919"
+              ]
+            },
+            "isMarine": {
+              "$id": "#/items/properties/worms_data/items/properties/isMarine",
+              "type": "integer",
+              "title": "Is Marine",
+              "description": "A binary value indicating whether or not a taxon is considered to be found in marine environments.",
+              "examples": [
+                0,
+                1
+              ]
+            },
+            "isBrackish": {
+              "$id": "#/items/properties/worms_data/items/properties/isBrackish",
+              "type": "integer",
+              "title": "Is Brackish",
+              "description": "A binary value indicating whether or not a taxon is considered to be found in brackish environments.",
+              "examples": [
+                0,
+                1
+              ]
+            },
+            "isFreshwater": {
+              "$id": "#/items/properties/worms_data/items/properties/isFreshwater",
+              "type": "integer",
+              "title": "Is Freshwater",
+              "description": "A binary value indicating whether or not a taxon is considered to be found in freshwater environments.",
+              "examples": [
+                0,
+                1
+              ]
+            },
+            "isTerrestrial": {
+              "$id": "#/items/properties/worms_data/items/properties/isTerrestrial",
+              "type": "integer",
+              "title": "Is Terrestrial",
+              "description": "A binary value indicating whether or not a taxon is considered to be found in terrestrial environments.",
+              "examples": [
+                0,
+                1
+              ]
+            },
+            "isExtinct": {
+              "$id": "#/items/properties/worms_data/items/properties/isExtinct",
+              "type": "null",
+              "title": "Is Extinct",
+              "description": "A binary value indicating whether or not the taxon is considered to be extinct.",
+              "examples": [
+                null
+              ]
+            },
+            "match_type": {
+              "$id": "#/items/properties/worms_data/items/properties/match_type",
+              "type": "string",
+              "title": "Match Type",
+              "description": "An indication of whether the search used to obtain the record resulted in an exact or fuzzy match to the record.",
+              "examples": [
+                "exact"
+              ]
+            },
+            "modified": {
+              "$id": "#/items/properties/worms_data/items/properties/modified",
+              "type": "string",
+              "title": "Date Modified",
+              "description": "The date and time the record was last modified.",
+              "examples": [
+                "2019-06-19T09:20:11.930Z"
+              ]
+            },
+            "taxonomy": {
+              "$id": "#/items/properties/worms_data/items/properties/taxonomy",
+              "type": "array",
+              "title": "The Taxonomy Schema",
+              "description": "An explanation about the purpose of this instance.",
+              "items": {
+                "$id": "#/items/properties/worms_data/items/properties/taxonomy/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "required": [
+                  "rank",
+                  "name"
+                ],
+                "properties": {
+                  "rank": {
+                    "$id": "#/items/properties/worms_data/items/properties/taxonomy/items/properties/rank",
+                    "type": "string",
+                    "title": "The Rank Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "examples": [
+                      "kingdom"
+                    ]
+                  },
+                  "name": {
+                    "$id": "#/items/properties/worms_data/items/properties/taxonomy/items/properties/name",
+                    "type": "string",
+                    "title": "The Name Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "examples": [
+                      "Animalia"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

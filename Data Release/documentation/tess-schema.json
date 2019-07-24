@@ -1,0 +1,384 @@
+{
+  "definitions": {
+    "items": {
+      "$id": "#/items",
+      "type": [
+        "object",
+        "array"
+      ],
+      "title": "Generic container for items in a dataset",
+      "description": "A JSON array or object property containing one or more items in a dataset or data structure within a dataset."
+    },
+    "doi": {
+      "$id": "#doi",
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Digital Object Identifier",
+      "description": "A digital object identifier for or associated with a record. May be in the form of an HTTP url or a standalone identifier.",
+      "examples": [
+        "http://dx.doi.org/10.2305/IUCN.UK.2004.RLTS.T59435A11941314.en",
+        "10.2305/IUCN.UK.2004.RLTS.T59435A11941314.en"
+      ]
+    },
+    "resolvable_identifier": {
+      "$id": "#resolvable_identifier",
+      "type": "string",
+      "title": "Resolvable Identifier",
+      "description": "Some form of resolvable identifier for a record that returns a response when accessed over an included protocol such as HTTP. May or may not provide for content negotiation.",
+      "examples": [
+        "https://www.iucnredlist.org/species/59435/11941314"
+      ]
+    },
+    "citation_string": {
+      "$id": "#citation_string",
+      "type": "string",
+      "title": "Citation String",
+      "description": "A citation string directly associated with a resource record. Can be any parseable citation string."
+    },
+    "record_date": {
+      "$id": "#record_date",
+      "type": "string",
+      "title": "The date that a record was considered valid from its source",
+      "description": "A date supplied by a record source indicating when it was considered valid or current.",
+      "examples": [
+        "2004-04-30"
+      ]
+    },
+    "document_title": {
+      "$id": "#document_title",
+      "type": "string",
+      "title": "The title for a document of any type",
+      "description": "A generic property used to hold the title for a document.",
+      "examples": [
+        "War and Peace"
+      ]
+    },
+    "document_link": {
+      "$id": "#document_title",
+      "type": "string",
+      "title": "A web link (URL) to access a document online",
+      "description": "A generic property used to hold a resolvable link to a document of any type.",
+      "examples": [
+        "https://www.gutenberg.org/files/2600/2600-h/2600-h.htm"
+      ]
+    },
+    "publication_date": {
+      "$id": "#publication_date",
+      "type": "string",
+      "title": "Date that a document or article was published",
+      "description": "A generic property used to hold a date at multiple levels of precision that a document or article was published.",
+      "examples": [
+        "1869"
+      ]
+    },
+    "date_created": {
+      "$id": "#date_created",
+      "type": "string",
+      "title": "Date Created",
+      "description": "Date/time at various levels of precision and formatting that a record was created standardized from source information.",
+      "examples": [
+        "1997-05-06 15:49:08"
+      ]
+    },
+    "date_modified": {
+      "$id": "#date_modified",
+      "type": "string",
+      "title": "Date Modified",
+      "description": "Date/time at various levels of precision and formatting that a record was modified standardized from source information.",
+      "examples": [
+        "2009-09-01 00:00:00"
+      ]
+    },
+    "biological_taxonomy": {
+      "$id": "#biological_taxonomy",
+      "type": "array",
+      "title": "Biological Taxonomy",
+      "description": "An array containing the full taxonomic hierarchy for the subject taxon with rank and name standardized into a useful form from source data.",
+      "items": {
+        "$ref": "#/definitions/items",
+        "required": [
+          "rank",
+          "name"
+        ]
+      },
+      "properties": {
+        "rank": {
+          "$id": "#/biological_taxonomy/items/properties/rank",
+          "type": "string",
+          "title": "Taxonomic Rank",
+          "description": "The specific rank in the taxonomic hierarchy.",
+          "examples": [
+            "Kingdom"
+          ]
+        },
+        "name": {
+          "$id": "#/biological_taxonomy/items/properties/name",
+          "type": "string",
+          "title": "Taxonomic Name",
+          "description": "The scientific name at the hierarchical rank.",
+          "examples": [
+            "Animalia"
+          ]
+        }
+      }
+    },
+  "parameters": {
+    "$id": "#/parameters",
+    "type": [
+      "object",
+      "array"
+    ],
+    "title": "Parameters",
+    "description": "An object or array that contains context-specific parameters as key/value pairs used as input to generate a record in a dataset."
+  },
+  "processing_metadata": {
+    "$id": "#processing_metadata",
+    "type": "object",
+    "title": "Object containing information about the processing of a record in a dataset",
+    "description": "A container object that contains properties describing the specific processing details for a given record within a dataset. Contains standardized properties describing the processing.",
+    "required": [
+      "status",
+      "date_processed",
+      "api"
+    ],
+    "properties": {
+      "status": {
+        "$id": "#status",
+        "type": "string",
+        "title": "The overall status of the record processing step",
+        "description": "Describes one of three standardized states for the processing of a given record.",
+        "default": "failure",
+        "examples": [
+          "success",
+          "failure",
+          "error"
+        ]
+      },
+      "date_processed": {
+        "$id": "#date_processed",
+        "type": "string",
+        "title": "The data and time that the process for a given record was conducted",
+        "description": "Date time stamp in ISO8601 format denoting the point when the processing of the record occurred. Can be used to evaluate record currency with original source and trigger updates.",
+        "examples": [
+          "2019-07-23T16:29:02.377774"
+        ]
+      },
+      "api": {
+        "$id": "#api",
+        "type": "string",
+        "title": "A resolvable API string used to obtain or generate a record in a dataset",
+        "description": "Some form of resolvable Application Programming Interface such as a REST URL that was used to generate the record being documented. Often passed through a function of some kind to process the results.",
+        "format": "uri"
+      },
+      "status_message": {
+        "$id": "#status_message",
+        "type": "string",
+        "title": "Message with further details about the status of a record",
+        "description": "Per dataset, this string contains context-specific details about the status or state of a record that was processed."
+      },
+      "details": {
+        "$id": "#details",
+        "type": "array",
+        "title": "Data Processing Details",
+        "description": "A list of statements describing additional specific details about the process of generating a record."
+      }
+    }
+  }
+},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://data.usgs.gov/property_registry/",
+  "type": "array",
+  "title": "TESS Schema",
+  "description": "A dataset containing summarized results from the USFWS Threatened and Endangered Species System pulled from its API. Data were assembled using a search function build into the experimental bispy software package (https://github.com/usgs-bcb/bispy).",
+  "items": {"$ref": "#/definitions/items"},
+    "properties": {
+      "processing_metadata": {"$ref": "#/definitions/processing_metadata"},
+      "tess_species": {
+        "$id": "#/items/properties/tess_species",
+        "type": "object",
+        "title": "The Tess_species Schema",
+        "description": "An explanation about the purpose of this instance.",
+        "required": [
+          "SPECIES_DETAIL"
+        ],
+        "properties": {
+          "SPECIES_DETAIL": {
+            "$id": "#/items/properties/tess_species/properties/SPECIES_DETAIL",
+            "type": [
+              "object",
+              "array"
+            ],
+            "title": "TESS Species",
+            "description": "An object or array containing properties from the Threatened and Endangered Species System retrieved via XQuery from an XML web service. An array of results will be used when more than one TESS record was found for the given API query.",
+            "required": [
+              "ENTITY_ID",
+              "SPCODE",
+              "VIPCODE",
+              "SCINAME",
+              "COMNAME",
+              "INVNAME",
+              "FAMILY",
+              "STATUS",
+              "STATUS_TEXT",
+              "TSN",
+              "DPS"
+            ],
+            "properties": {
+              "ENTITY_ID": {
+                "$id": "#/items/properties/tess_species/properties/SPECIES_DETAIL/properties/ENTITY_ID",
+                "type": "string",
+                "title": "Entity ID",
+                "description": "Internal identifier used only within the TESS system.",
+                "examples": [
+                  "9143"
+                ]
+              },
+              "SPCODE": {
+                "$id": "#/items/properties/tess_species/properties/SPECIES_DETAIL/properties/SPCODE",
+                "type": "string",
+                "title": "Species Code",
+                "description": "Internal species code used in the TESS system documented at http://bit.ly/30N2SEa.",
+                "examples": [
+                  "D03E"
+                ]
+              },
+              "VIPCODE": {
+                "$id": "#/items/properties/tess_species/properties/SPECIES_DETAIL/properties/VIPCODE",
+                "type": "string",
+                "title": "VIP Code",
+                "description": "Internal species code used in the TESS system documented at http://bit.ly/30N2SEa.",
+                "examples": [
+                  "V01"
+                ]
+              },
+              "SCINAME": {
+                "$id": "#/items/properties/tess_species/properties/SPECIES_DETAIL/properties/SCINAME",
+                "type": "string",
+                "title": "Scientific Name",
+                "description": "Scientific (latin) name for the biological species.",
+                "examples": [
+                  "Rhyacotriton cascadae"
+                ]
+              },
+              "COMNAME": {
+                "$id": "#/items/properties/tess_species/properties/SPECIES_DETAIL/properties/COMNAME",
+                "type": "string",
+                "title": "Common Name",
+                "description": "Common (vernacular) name for the biological species.",
+                "examples": [
+                  "Cascade torrent salamander"
+                ]
+              },
+              "INVNAME": {
+                "$id": "#/items/properties/tess_species/properties/SPECIES_DETAIL/properties/INVNAME",
+                "type": "string",
+                "title": "Inverted Common Name",
+                "description": "Inverted form of the common name used to group similar species.",
+                "examples": [
+                  "salamander, Cascade torrent"
+                ]
+              },
+              "POP_ABBREV": {
+                "$id": "#/items/properties/tess_species/properties/SPECIES_DETAIL/properties/POP_ABBREV",
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "title": "Population Abbreviation",
+                "description": "Abbreviated form of the population designated for listing.",
+                "examples": [
+                  "Wherever found"
+                ]
+              },
+              "POP_DESC": {
+                "$id": "#/items/properties/tess_species/properties/SPECIES_DETAIL/properties/POP_DESC",
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "title": "Population Description",
+                "description": "Longer description of the population designated for listing.",
+                "examples": [
+                  "Wherever found"
+                ]
+              },
+              "FAMILY": {
+                "$id": "#/items/properties/tess_species/properties/SPECIES_DETAIL/properties/FAMILY",
+                "type": "string",
+                "title": "Taxonomic Family",
+                "description": "Family name for the species from the taxonomic tree.",
+                "examples": [
+                  "rhyacotritonidae"
+                ]
+              },
+              "STATUS": {
+                "$id": "#/items/properties/tess_species/properties/SPECIES_DETAIL/properties/STATUS",
+                "type": "string",
+                "title": "Listing Status Code",
+                "description": "Listing status code documented here http://bit.ly/30Zk35H.",
+                "examples": [
+                  "UR"
+                ]
+              },
+              "STATUS_TEXT": {
+                "$id": "#/items/properties/tess_species/properties/SPECIES_DETAIL/properties/STATUS_TEXT",
+                "type": "string",
+                "title": "Listing Status",
+                "description": "Text description of the listing status documented here http://bit.ly/30Zk35H.",
+                "examples": [
+                  "Under Review in the Candidate or Petition Process"
+                ]
+              },
+              "LEAD_AGENCY": {
+                "$id": "#/items/properties/tess_species/properties/SPECIES_DETAIL/properties/LEAD_AGENCY",
+                "type": "string",
+                "title": "Lead Agency",
+                "description": "Lead U.S. Federal Agency under the Endangered Species Act.",
+                "examples": [
+                  "1"
+                ]
+              },
+              "LEAD_REGION": {
+                "$id": "#/items/properties/tess_species/properties/SPECIES_DETAIL/properties/LEAD_REGION",
+                "type": "string",
+                "title": "Lead Region",
+                "description": "Lead USFWS Region number.",
+                "examples": [
+                  "6"
+                ]
+              },
+              "COUNTRY": {
+                "$id": "#/items/properties/tess_species/properties/SPECIES_DETAIL/properties/COUNTRY",
+                "type": "string",
+                "title": "Country",
+                "description": "Internally used country code from the TESS system.",
+                "examples": [
+                  "1"
+                ]
+              },
+              "TSN": {
+                "$id": "#/items/properties/tess_species/properties/SPECIES_DETAIL/properties/TSN",
+                "type": "string",
+                "title": "ITIS Taxonomic Serial Number",
+                "description": "Taxonomic Serial Number for the species from the Integrated Taxonomic Information System.",
+                "examples": [
+                  "550250"
+                ]
+              },
+              "DPS": {
+                "$id": "#/items/properties/tess_species/properties/SPECIES_DETAIL/properties/DPS",
+                "type": "string",
+                "title": "Distinct Population Segment",
+                "description": "A binary value indicating whether or not the listing is for a distinct population segment.",
+                "examples": [
+                  "0"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
