@@ -1,0 +1,500 @@
+{
+  "definitions": {
+    "items": {
+      "$id": "#items",
+      "type": [
+        "object",
+        "array"
+      ],
+      "title": "Generic container for items in a dataset",
+      "description": "A JSON array or object property containing one or more items in a dataset or data structure within a dataset."
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://data.usgs.gov/property_registry/",
+  "type": "array",
+  "title": "NatureServe Species Summary Collection",
+  "description": "A dataset containing the results of a search for NatureServe Species against their public API. At this point, the schema is essentially the raw results from the search with a little bit of processing metadata and transformation from XML to JSON. Additional details for the schema will be provided in later versions of the process.",
+  "items": {
+    "$ref": "#/definitions/items",
+    "properties": {
+      "processing_metadata": {"$ref": "common_properties.json#/definitions/processing_metadata"},
+      "parameters": {"$ref": "common_properties.json#/definitions/parameters",
+        "required": [
+          "Scientific Name",
+          "Name Source"
+        ],
+        "properties": {
+          "Scientific Name": {"$ref": "common_properties.json#/definitions/Scientific Name"},
+          "Name Source": {
+            "$id": "#/items/properties/parameters/properties/Name Source",
+            "type": "string",
+            "enum": [
+              "Lookup Name"
+            ],
+            "title": "Name Source",
+            "description": "A label for the source of scientific name used in the query.",
+            "examples": [
+              "Lookup Name"
+            ]
+          }
+        }
+      },
+      "NatureServe Species": {
+        "$id": "#/items/properties/NatureServe Species",
+        "type": "object",
+        "title": "NatureServe Species",
+        "description": "Data object that is a transformation of the raw XML output from the NatureServe Species public API to JSON. Property names have not been fully described in this form. XSD species schemas are referenced here - https://services.natureserve.org/TechnicalResources/v1.0Schemas/Species/SpeciesSchemaDescription.jsp (not online at the last check). The schema reflects a design that was tailored for particular uses with a certain amount of repetitiveness that we will eventually clean up for use.",
+        "required": [
+          "@uid",
+          "@type",
+          "jurisdictionNationName",
+          "nationalScientificName",
+          "nationalConservationStatus",
+          "roundedNationalConservationStatus",
+          "nationalCommonName",
+          "natureServeGlobalConcept",
+          "nationalDistributions",
+          "otherStatuses",
+          "metadata"
+        ],
+        "properties": {
+          "@uid": {
+            "$id": "#/items/properties/NatureServe Species/properties/@uid",
+            "type": "string",
+            "title": "The @uid Schema",
+            "examples": [
+              "ELEMENT_NATIONAL.2.162897"
+            ]
+          },
+          "@type": {
+            "$id": "#/items/properties/NatureServe Species/properties/@type",
+            "type": "string",
+            "title": "The @type Schema",
+            "examples": [
+              "Animal"
+            ]
+          },
+          "jurisdictionNationName": {
+            "$id": "#/items/properties/NatureServe Species/properties/jurisdictionNationName",
+            "type": "object",
+            "title": "The Jurisdictionnationname Schema",
+            "required": [
+              "@code",
+              "#text"
+            ],
+            "properties": {
+              "@code": {
+                "$id": "#/items/properties/NatureServe Species/properties/jurisdictionNationName/properties/@code",
+                "type": "string",
+                "title": "The @code Schema",
+                "examples": [
+                  "US"
+                ]
+              },
+              "#text": {
+                "$id": "#/items/properties/NatureServe Species/properties/jurisdictionNationName/properties/#text",
+                "type": "string",
+                "title": "The #text Schema",
+                "examples": [
+                  "UNITED STATES"
+                ]
+              }
+            }
+          },
+          "nationalScientificName": {
+            "$id": "#/items/properties/NatureServe Species/properties/nationalScientificName",
+            "type": "object",
+            "title": "The Nationalscientificname Schema",
+            "required": [
+              "unformattedName",
+              "formattedName",
+              "nomenclaturalAuthor"
+            ],
+            "properties": {
+              "unformattedName": {
+                "$id": "#/items/properties/NatureServe Species/properties/nationalScientificName/properties/unformattedName",
+                "type": "string",
+                "title": "The Unformattedname Schema",
+                "examples": [
+                  "Rhyacotriton cascadae"
+                ]
+              },
+              "formattedName": {
+                "$id": "#/items/properties/NatureServe Species/properties/nationalScientificName/properties/formattedName",
+                "type": "string",
+                "title": "The Formattedname Schema",
+                "examples": [
+                  "<i>Rhyacotriton cascadae</i>"
+                ]
+              },
+              "nomenclaturalAuthor": {
+                "$id": "#/items/properties/NatureServe Species/properties/nationalScientificName/properties/nomenclaturalAuthor",
+                "type": "string",
+                "title": "The Nomenclaturalauthor Schema",
+                "examples": [
+                  "Good and Wake, 1992"
+                ]
+              }
+            }
+          },
+          "nationalConservationStatus": {
+            "$id": "#/items/properties/NatureServe Species/properties/nationalConservationStatus",
+            "type": "object",
+            "title": "The Nationalconservationstatus Schema",
+            "required": [
+              "@lastChangedDate",
+              "@lastReviewedDate",
+              "#text"
+            ],
+            "properties": {
+              "@lastChangedDate": {
+                "$id": "#/items/properties/NatureServe Species/properties/nationalConservationStatus/properties/@lastChangedDate",
+                "type": "string",
+                "title": "The @lastchangeddate Schema",
+                "examples": [
+                  "1996-11-01"
+                ]
+              },
+              "@lastReviewedDate": {
+                "$id": "#/items/properties/NatureServe Species/properties/nationalConservationStatus/properties/@lastReviewedDate",
+                "type": "string",
+                "title": "The @lastrevieweddate Schema",
+                "examples": [
+                  "1996-11-01"
+                ]
+              },
+              "#text": {
+                "$id": "#/items/properties/NatureServe Species/properties/nationalConservationStatus/properties/#text",
+                "type": "string",
+                "title": "The #text Schema",
+                "examples": [
+                  "N3"
+                ]
+              }
+            }
+          },
+          "roundedNationalConservationStatus": {
+            "$id": "#/items/properties/NatureServe Species/properties/roundedNationalConservationStatus",
+            "type": "string",
+            "title": "The Roundednationalconservationstatus Schema",
+            "examples": [
+              "N3"
+            ]
+          },
+          "nationalCommonName": {
+            "$id": "#/items/properties/NatureServe Species/properties/nationalCommonName",
+            "type": "string",
+            "title": "The Nationalcommonname Schema",
+            "examples": [
+              "Cascade Torrent Salamander"
+            ]
+          },
+          "natureServeGlobalConcept": {
+            "$id": "#/items/properties/NatureServe Species/properties/natureServeGlobalConcept",
+            "type": "object",
+            "title": "The Natureserveglobalconcept Schema",
+            "required": [
+              "@uid",
+              "classificationStatus",
+              "natureServeExplorerURI",
+              "taxonomicConceptReference",
+              "nameUsedInConceptReference",
+              "globalScientificName",
+              "globalConservationStatus",
+              "roundedGlobalConservationStatus",
+              "globalTaxonomyComments"
+            ],
+            "properties": {
+              "@uid": {
+                "$id": "#/items/properties/NatureServe Species/properties/natureServeGlobalConcept/properties/@uid",
+                "type": "string",
+                "title": "The @uid Schema",
+                "examples": [
+                  "ELEMENT_GLOBAL.2.102976"
+                ]
+              },
+              "classificationStatus": {
+                "$id": "#/items/properties/NatureServe Species/properties/natureServeGlobalConcept/properties/classificationStatus",
+                "type": "string",
+                "title": "The Classificationstatus Schema",
+                "examples": [
+                  "Standard"
+                ]
+              },
+              "natureServeExplorerURI": {
+                "$id": "#/items/properties/NatureServe Species/properties/natureServeGlobalConcept/properties/natureServeExplorerURI",
+                "type": "string",
+                "title": "The Natureserveexploreruri Schema",
+                "examples": [
+                  "http://explorer.natureserve.org/servlet/NatureServe?searchSpeciesUid=ELEMENT_GLOBAL.2.102976"
+                ]
+              },
+              "taxonomicConceptReference": {
+                "$id": "#/items/properties/NatureServe Species/properties/natureServeGlobalConcept/properties/taxonomicConceptReference",
+                "type": "object",
+                "title": "The Taxonomicconceptreference Schema",
+                "required": [
+                  "@code",
+                  "formattedCitation",
+                  "unformattedCitation"
+                ],
+                "properties": {
+                  "@code": {
+                    "$id": "#/items/properties/NatureServe Species/properties/natureServeGlobalConcept/properties/taxonomicConceptReference/properties/@code",
+                    "type": "string",
+                    "title": "The @code Schema",
+                    "examples": [
+                      "B92GOO01NAUS"
+                    ]
+                  },
+                  "formattedCitation": {
+                    "$id": "#/items/properties/NatureServe Species/properties/natureServeGlobalConcept/properties/taxonomicConceptReference/properties/formattedCitation",
+                    "type": "string",
+                    "title": "The Formattedcitation Schema",
+                    "examples": [
+                      "Good, D. A., and D. B. Wake. 1992. Geographic variation and speciation in the torrent salamanders of the genus <i>Rhyacotriton </i> (Caudata: Rhyacotritonidae). Univ. California Publication Zoology 126:i-xii, 1-91."
+                    ]
+                  },
+                  "unformattedCitation": {
+                    "$id": "#/items/properties/NatureServe Species/properties/natureServeGlobalConcept/properties/taxonomicConceptReference/properties/unformattedCitation",
+                    "type": "string",
+                    "title": "The Unformattedcitation Schema",
+                    "examples": [
+                      "Good, D. A., and D. B. Wake. 1992. Geographic variation and speciation in the torrent salamanders of the genus Rhyacotriton  (Caudata: Rhyacotritonidae). Univ. California Publication Zoology 126:i-xii, 1-91."
+                    ]
+                  }
+                }
+              },
+              "nameUsedInConceptReference": {
+                "$id": "#/items/properties/NatureServe Species/properties/natureServeGlobalConcept/properties/nameUsedInConceptReference",
+                "type": "object",
+                "title": "The Nameusedinconceptreference Schema",
+                "required": [
+                  "unformattedName",
+                  "formattedName",
+                  "nomenclaturalAuthor"
+                ],
+                "properties": {
+                  "unformattedName": {
+                    "$id": "#/items/properties/NatureServe Species/properties/natureServeGlobalConcept/properties/nameUsedInConceptReference/properties/unformattedName",
+                    "type": "string",
+                    "title": "The Unformattedname Schema",
+                    "examples": [
+                      "Rhyacotriton cascadae"
+                    ]
+                  },
+                  "formattedName": {
+                    "$id": "#/items/properties/NatureServe Species/properties/natureServeGlobalConcept/properties/nameUsedInConceptReference/properties/formattedName",
+                    "type": "string",
+                    "title": "The Formattedname Schema",
+                    "examples": [
+                      "<i>Rhyacotriton cascadae</i>"
+                    ]
+                  },
+                  "nomenclaturalAuthor": {
+                    "$id": "#/items/properties/NatureServe Species/properties/natureServeGlobalConcept/properties/nameUsedInConceptReference/properties/nomenclaturalAuthor",
+                    "type": "string",
+                    "title": "The Nomenclaturalauthor Schema",
+                    "examples": [
+                      "Good and Wake"
+                    ]
+                  }
+                }
+              },
+              "globalScientificName": {
+                "$id": "#/items/properties/NatureServe Species/properties/natureServeGlobalConcept/properties/globalScientificName",
+                "type": "object",
+                "title": "The Globalscientificname Schema",
+                "required": [
+                  "unformattedName",
+                  "formattedName",
+                  "nomenclaturalAuthor"
+                ],
+                "properties": {
+                  "unformattedName": {
+                    "$id": "#/items/properties/NatureServe Species/properties/natureServeGlobalConcept/properties/globalScientificName/properties/unformattedName",
+                    "type": "string",
+                    "title": "The Unformattedname Schema",
+                    "examples": [
+                      "Rhyacotriton cascadae"
+                    ]
+                  },
+                  "formattedName": {
+                    "$id": "#/items/properties/NatureServe Species/properties/natureServeGlobalConcept/properties/globalScientificName/properties/formattedName",
+                    "type": "string",
+                    "title": "The Formattedname Schema",
+                    "examples": [
+                      "<i>Rhyacotriton cascadae</i>"
+                    ]
+                  },
+                  "nomenclaturalAuthor": {
+                    "$id": "#/items/properties/NatureServe Species/properties/natureServeGlobalConcept/properties/globalScientificName/properties/nomenclaturalAuthor",
+                    "type": "string",
+                    "title": "The Nomenclaturalauthor Schema",
+                    "examples": [
+                      "Good and Wake, 1992"
+                    ]
+                  }
+                }
+              },
+              "globalConservationStatus": {
+                "$id": "#/items/properties/NatureServe Species/properties/natureServeGlobalConcept/properties/globalConservationStatus",
+                "type": "string",
+                "title": "The Globalconservationstatus Schema",
+                "examples": [
+                  "G3"
+                ]
+              },
+              "roundedGlobalConservationStatus": {
+                "$id": "#/items/properties/NatureServe Species/properties/natureServeGlobalConcept/properties/roundedGlobalConservationStatus",
+                "type": "string",
+                "title": "The Roundedglobalconservationstatus Schema",
+                "examples": [
+                  "G3"
+                ]
+              },
+              "globalTaxonomyComments": {
+                "$id": "#/items/properties/NatureServe Species/properties/natureServeGlobalConcept/properties/globalTaxonomyComments",
+                "type": "string",
+                "title": "The Globaltaxonomycomments Schema",
+                "examples": [
+                  "Formerly included in <i>R. olympicus</i>. An analysis of allozyme variation in the long-standing monotypic genus <i>Rhyacotriton</i> yielded three distinct geographic units: (1) the Coast Ranges from the Olympic Peninsula of Washington to northwestern Oregon, (2) the Coast Ranges from northwestern Oregon to Mendocino County, California, and (3) the Cascade Mountains of south-central Washington and northern Oregon (Good et al. 1987). The level of morphological differentiation was not concordant with the genetic patterns observed. Because no contact areas or areas of sympatry were found, Good et al. (1987) did not recommend any taxonomic changes, but the authors did state that <i>Rhyacotriton</i> probably includes three separate species, each of which displays substantial intraspecific differentiation. Further study by Good and Wake (1992) confirmed high levels of genetic differentiation and revealed no gene flow in contact zones; Good and Wake concluded that <i>Rhyacotriton</i> comprises 4 species: <i>R. olympicus</i>, <i>R. cascadae</i>, <i>R. kezeri</i>, and <i>R. variegatus</i> (raised from subspecific rank). Good and Wake mentioned the possibility that multiple species of <i>Rhyacotriton</i> may occur in the Cascades. Highton (2000) interpreted their data as showing that <i>R. cascadae</i> likely encompasses two species.<br /><br />Good and Wake (1992) removed <i>Rhyacotriton</i> from the family Dicamptodontidae and established it as the sole member of the family Rhyacotritonidae."
+                ]
+              }
+            }
+          },
+          "nationalDistributions": {
+            "$id": "#/items/properties/NatureServe Species/properties/nationalDistributions",
+            "type": "object",
+            "title": "The Nationaldistributions Schema",
+            "required": [
+              "nationalDistribution"
+            ],
+            "properties": {
+              "nationalDistribution": {
+                "$id": "#/items/properties/NatureServe Species/properties/nationalDistributions/properties/nationalDistribution",
+                "type": "object",
+                "title": "The Nationaldistribution Schema",
+                "required": [
+                  "origin",
+                  "regularity",
+                  "currentPresenceAbsence",
+                  "distributionConfidence",
+                  "population"
+                ],
+                "properties": {
+                  "origin": {
+                    "$id": "#/items/properties/NatureServe Species/properties/nationalDistributions/properties/nationalDistribution/properties/origin",
+                    "type": "string",
+                    "title": "The Origin Schema",
+                    "examples": [
+                      "Native"
+                    ]
+                  },
+                  "regularity": {
+                    "$id": "#/items/properties/NatureServe Species/properties/nationalDistributions/properties/nationalDistribution/properties/regularity",
+                    "type": "string",
+                    "title": "The Regularity Schema",
+                    "examples": [
+                      "Regularly occurring"
+                    ]
+                  },
+                  "currentPresenceAbsence": {
+                    "$id": "#/items/properties/NatureServe Species/properties/nationalDistributions/properties/nationalDistribution/properties/currentPresenceAbsence",
+                    "type": "string",
+                    "title": "The Currentpresenceabsence Schema",
+                    "examples": [
+                      "Present"
+                    ]
+                  },
+                  "distributionConfidence": {
+                    "$id": "#/items/properties/NatureServe Species/properties/nationalDistributions/properties/nationalDistribution/properties/distributionConfidence",
+                    "type": "string",
+                    "title": "The Distributionconfidence Schema",
+                    "examples": [
+                      "Confident"
+                    ]
+                  },
+                  "population": {
+                    "$id": "#/items/properties/NatureServe Species/properties/nationalDistributions/properties/nationalDistribution/properties/population",
+                    "type": "string",
+                    "title": "The Population Schema",
+                    "examples": [
+                      "Year-round"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "otherStatuses": {
+            "$id": "#/items/properties/NatureServe Species/properties/otherStatuses",
+            "type": "object",
+            "title": "The Otherstatuses Schema",
+            "required": [
+              "status"
+            ],
+            "properties": {
+              "status": {
+                "$id": "#/items/properties/NatureServe Species/properties/otherStatuses/properties/status",
+                "type": "object",
+                "title": "The Status Schema",
+                "required": [
+                  "@name",
+                  "statusValue",
+                  "statusDate"
+                ],
+                "properties": {
+                  "@name": {
+                    "$id": "#/items/properties/NatureServe Species/properties/otherStatuses/properties/status/properties/@name",
+                    "type": "string",
+                    "title": "The @name Schema",
+                    "examples": [
+                      "BLM"
+                    ]
+                  },
+                  "statusValue": {
+                    "$id": "#/items/properties/NatureServe Species/properties/otherStatuses/properties/status/properties/statusValue",
+                    "type": "string",
+                    "title": "The Statusvalue Schema",
+                    "examples": [
+                      "BLM Sensitive Species"
+                    ]
+                  },
+                  "statusDate": {
+                    "$id": "#/items/properties/NatureServe Species/properties/otherStatuses/properties/status/properties/statusDate",
+                    "type": "string",
+                    "title": "The Statusdate Schema",
+                    "examples": [
+                      "2015-10-01"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "metadata": {
+            "$id": "#/items/properties/NatureServe Species/properties/metadata",
+            "type": "object",
+            "title": "The Metadata Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "required": [
+              "references"
+            ],
+            "properties": {
+              "references": {
+                "$id": "#/items/properties/NatureServe Species/properties/metadata/properties/references",
+                "type": "null",
+                "title": "The References Schema",
+                "examples": [
+                  null
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

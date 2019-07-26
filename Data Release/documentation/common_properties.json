@@ -1,0 +1,296 @@
+{
+  "definitions": {
+    "items": {
+      "$id": "#items",
+      "type": [
+        "object",
+        "array",
+        "null"
+      ],
+      "title": "Dataset Items",
+      "description": "A JSON object or array containing the item or items in a dataset."
+    },
+    "parameters": {
+      "$id": "#parameters",
+      "type": [
+        "object",
+        "array",
+        "null"
+      ],
+      "title": "Parameters",
+      "description": "An object or array that contains context-specific parameters as key/value pairs used as input to generate a record in a dataset or configure a process."
+    },
+    "doi": {
+      "$id": "#doi",
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Digital Object Identifier",
+      "description": "A digital object identifier for or associated with a record. May be in the form of an HTTP url or a standalone identifier.",
+      "examples": [
+        "http://dx.doi.org/10.2305/IUCN.UK.2004.RLTS.T59435A11941314.en",
+        "10.2305/IUCN.UK.2004.RLTS.T59435A11941314.en"
+      ],
+      "aliases": [
+        "DOI"
+      ]
+    },
+    "resolvable_identifier": {
+      "$id": "#resolvable_identifier",
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Resolvable Identifier",
+      "description": "Some form of resolvable identifier for a record that returns a response when accessed over an included protocol such as HTTP. May or may not provide for content negotiation.",
+      "examples": [
+        "https://www.iucnredlist.org/species/59435/11941314"
+      ]
+    },
+    "citation_string": {
+      "$id": "#citation_string",
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Citation String",
+      "description": "A citation string directly associated with a resource record. Can be any parseable citation string.",
+      "examples": [
+        "NatureServe 2014. Notropis ozarcanus. The IUCN Red List of Threatened Species 2014: e.T202315A19034813. http://dx.doi.org/10.2305/IUCN.UK.2014-3.RLTS.T202315A19034813.en"
+      ]
+    },
+    "record_date": {
+      "$id": "#record_date",
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "The date that a record was considered valid from its source",
+      "description": "A date supplied by a record source indicating when it was considered valid or current.",
+      "examples": [
+        "2004-04-30"
+      ]
+    },
+    "document_title": {
+      "$id": "#document_title",
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "The title for a document of any type",
+      "description": "A generic property used to hold the title for a document.",
+      "examples": [
+        "War and Peace"
+      ],
+      "aliases": [
+        "TITLE",
+        "title"
+      ]
+    },
+    "document_link": {
+      "$id": "#document_title",
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "A web link (URL) to access a document online",
+      "description": "A generic property used to hold a resolvable link to a document of any type.",
+      "examples": [
+        "https://www.gutenberg.org/files/2600/2600-h/2600-h.htm"
+      ],
+      "aliases": [
+        "URL",
+        "url"
+      ]
+    },
+    "date_published": {
+      "$id": "#date_published",
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Date that a document or article was published",
+      "description": "A generic property used to hold a date at multiple levels of precision that a document, article, dataset, or item of some type was made public.",
+      "examples": [
+        "1869"
+      ]
+    },
+    "date_created": {
+      "$id": "#date_created",
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Date Created",
+      "description": "Date/time at various levels of precision and formatting that a record was created standardized from source information.",
+      "examples": [
+        "1997-05-06 15:49:08"
+      ]
+    },
+    "date_modified": {
+      "$id": "#date_modified",
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Date Modified",
+      "description": "Date/time at various levels of precision and formatting that a record was modified standardized from source information.",
+      "examples": [
+        "2009-09-01 00:00:00"
+      ]
+    },
+    "itis_tsn": {
+      "$id": "#itis_tsn",
+      "type": [
+        "string",
+        "integer",
+        "null"
+      ],
+      "title": "ITIS Taxonomic Serial Number",
+      "description": "The unique, persistent identifier used in the Integrated Taxonomic Information System to reference and retrieve data for a taxon. The context in which the TSN is used is important to understand its relative meaning and timeliness in terms of the constant evolution of biological taxonomy. By itself, it cannot be determined if the identifier is used to indicate complete alignment of a source information point with ITIS or some other type of specific relationship.",
+      "examples": [
+        "550250"
+      ],
+      "aliases": [
+        "TSN",
+        "ITIS TSN"
+      ]
+    },
+    "Scientific Name": {
+      "$id": "#Scientific Name",
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Biological Species Scientific Name",
+      "description": "The scientific or latin name for a biological species. This property is found commonly throughout biological databases and information sources. The context in which the name is used is important to understand its relative meaning and timeliness in terms of the constant evolution of biological taxonomy.",
+      "examples": [
+        "Acroneuria kosztarabi"
+      ],
+      "aliases": [
+        "SCINAME"
+      ]
+    },
+    "Common Name": {
+      "$id": "#Common Name",
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "Biological Species Common Name",
+      "description": "A common or vernacular name for a biological species. This property is found commonly throughout biological databases and information sources. The context in which the name is used is important to understand the applicability of its use as common names vary across languages, cultures, and disciplines. When discovered and used outside a particular context, the property should be used for basic discovery and labeling purposes only.",
+      "examples": [
+        "Virginia stone"
+      ],
+      "aliases": [
+        "COMNAME"
+      ]
+    },
+    "processing_metadata": {
+      "$id": "#processing_metadata",
+      "type": [
+        "object",
+        "null"
+      ],
+      "title": "Object containing information about the processing of a record in a dataset",
+      "description": "A container object that contains properties describing the specific processing details for a given record within a dataset. Contains standardized properties describing the processing.",
+      "required": [
+        "status",
+        "date_processed",
+        "api"
+      ],
+      "properties": {
+        "status": {
+          "$id": "#status",
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "The overall status of the record processing step",
+          "description": "Describes one of three standardized states for the processing of a given record.",
+          "default": "failure",
+          "examples": [
+            "success",
+            "failure",
+            "error"
+          ]
+        },
+        "date_processed": {
+          "$id": "#date_processed",
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "The data and time that the process for a given record was conducted",
+          "description": "Date time stamp in ISO8601 format denoting the point when the processing of the record occurred. Can be used to evaluate record currency with original source and trigger updates.",
+          "examples": [
+            "2019-07-23T16:29:02.377774"
+          ]
+        },
+        "api": {
+          "$id": "#api",
+          "type": [
+            "string",
+            "array",
+            "null"
+          ],
+          "title": "API(S) used in building the record",
+          "description": "Some form of resolvable Application Programming Interface such as a REST URL that was used to generate the record being documented. Often passed through a function of some kind to process the results. Can be a single string or an array of strings.",
+          "format": "uri"
+        },
+        "status_message": {
+          "$id": "#status_message",
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Message with further details about the status of a record",
+          "description": "Per dataset, this string contains context-specific details about the status or state of a record that was processed."
+        },
+        "details": {
+          "$id": "#details",
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Data Processing Details",
+          "description": "A list of statements or other data structures describing additional specific details about the process of generating a record."
+        }
+      }
+    },
+    "biological_taxonomy": {
+      "$id": "#biological_taxonomy",
+      "type": "array",
+      "title": "Biological Taxonomy",
+      "description": "An array containing the taxonomic hierarchy for the subject taxon with rank and name standardized into a useful form from source data.",
+      "items": {
+        "$ref": "#/definitions/items",
+        "required": [
+          "rank",
+          "name"
+        ]
+      },
+      "properties": {
+        "rank": {
+          "$id": "#/biological_taxonomy/items/properties/rank",
+          "type": "string",
+          "title": "Taxonomic Rank",
+          "description": "The specific rank in the taxonomic hierarchy.",
+          "examples": [
+            "Kingdom"
+          ]
+        },
+        "name": {
+          "$id": "#/biological_taxonomy/items/properties/name",
+          "type": "string",
+          "title": "Taxonomic Name",
+          "description": "The scientific name at the hierarchical rank.",
+          "examples": [
+            "Animalia"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1202 @@
+{
+  "definitions": {
+    "items": {
+      "$id": "#items",
+      "type": [
+        "object",
+        "array"
+      ],
+      "title": "Generic container for items in a dataset",
+      "description": "A JSON array or object property containing one or more items in a dataset or data structure within a dataset."
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://data.usgs.gov/property_registry/",
+  "type": "array",
+  "title": "GAP Species Summary Collection",
+  "description": "A dataset containing the results of a search for Gap Analysis Project Species in ScienceBase. The process assembles several collections of details about the species for further analysis and other uses.",
+  "items": {
+    "$ref": "#/definitions/items",
+    "properties": {
+      "processing_metadata": {
+        "$ref": "common_properties.json#/definitions/processing_metadata"
+      },
+      "parameters": {
+        "$ref": "common_properties.json#/definitions/parameters",
+        "required": [
+          "Scientific Name",
+          "Name Source"
+        ],
+        "properties": {
+          "Scientific Name": {
+            "$ref": "common_properties.json#/definitions/Scientific Name"
+          },
+          "Name Source": {
+            "$id": "#/items/properties/parameters/properties/Name Source",
+            "type": "string",
+            "enum": [
+              "Lookup Name"
+            ],
+            "title": "Name Source",
+            "description": "A label for the source of scientific name used in the query.",
+            "examples": [
+              "Lookup Name"
+            ]
+          }
+        }
+      },
+      "GAP Species": {
+        "$id": "#/properties/GAP Species",
+        "type": "object",
+        "title": "The Gap species Schema",
+        "description": "An explanation about the purpose of this instance.",
+        "required": [
+          "GAP Habitat Map Item",
+          "GAP Range Map Item",
+          "GAP Habitat Map WMS",
+          "GAP Modeling Database Parameters URL",
+          "GAP ITIS Information URL",
+          "GAP Habitat Map File Size",
+          "GAP Habitat Map Last Updated",
+          "GAP_SpeciesCode",
+          "CommonName",
+          "ScientificName",
+          "doi",
+          "itis_tsn_validMatch",
+          "nsid_acceptedMatch",
+          "iucn_id_verified",
+          "GAP Range Map WMS",
+          "Range Bounding Box",
+          "GAP Modeling Database Parameters",
+          "GAP ITIS Information"
+        ],
+        "properties": {
+          "GAP Habitat Map Item": {
+            "$id": "#/properties/GAP Species/properties/GAP Habitat Map Item",
+            "type": "string",
+            "title": "Habitat Map Item Link",
+            "description": "A link to the ScienceBase Item containing the species habitat map for the GAP species.",
+            "examples": [
+              "https://www.sciencebase.gov/catalog/item/58fa3fd2e4b0b7ea5452492a"
+            ]
+          },
+          "GAP Range Map Item": {
+            "$id": "#/properties/GAP Species/properties/GAP Range Map Item",
+            "type": "string",
+            "title": "Range Map Item Link",
+            "description": "A link to the ScienceBase Item containing the species range map for the GAP species.",
+            "examples": [
+              "https://www.sciencebase.gov/catalog/item/59f5e1e0e4b063d5d307db59"
+            ]
+          },
+          "GAP Habitat Map WMS": {
+            "$id": "#/properties/GAP Species/properties/GAP Habitat Map WMS",
+            "type": "string",
+            "title": "GAP Habitat Map WMS",
+            "description": "The URL for the Web Map Service for the GAP habitat map.",
+            "examples": [
+              "https://www.sciencebase.gov/geoserver/CONUS_HabMap_2001/wms?service=WMS&version=1.1.0&request=GetCapabilities"
+            ]
+          },
+          "GAP Modeling Database Parameters URL": {
+            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters URL",
+            "type": "string",
+            "title": "GAP Modeling Database Parameters Link",
+            "description": "The file download link for the GAP species modeling database parameters.",
+            "examples": [
+              "https://www.sciencebase.gov/catalog/file/get/58fa3fd2e4b0b7ea5452492a?f=__disk__51%2F49%2F99%2F5149999fea2e76060fb0fc0f7a359eb3536c85a8"
+            ]
+          },
+          "GAP ITIS Information URL": {
+            "$id": "#/properties/GAP Species/properties/GAP ITIS Information URL",
+            "type": "string",
+            "title": "GAP ITIS Information Link",
+            "description": "The file download link for a data structure containing information on the ITIS taxonomic record associated with the GAP species.",
+            "examples": [
+              "https://www.sciencebase.gov/catalog/file/get/58fa3fd2e4b0b7ea5452492a?f=__disk__e9%2F38%2F54%2Fe93854e13dee2fb6318e26739e2751fa064cbb88"
+            ]
+          },
+          "GAP Habitat Map File Size": {
+            "$id": "#/properties/GAP Species/properties/GAP Habitat Map File Size",
+            "type": "integer",
+            "title": "GAP Habitat Map File Size",
+            "description": "The size in bytes of the habitat map zipped GeoTIFF for the GAP species",
+            "examples": [
+              2301548
+            ]
+          },
+          "GAP Habitat Map Last Updated": {
+            "$id": "#/properties/GAP Species/properties/GAP Habitat Map Last Updated",
+            "type": "string",
+            "title": "Habitat Map Last Updated",
+            "description": "Date/time that the habitat map item was last updated.",
+            "examples": [
+              "2019-02-08T12:00:27.453-07:00"
+            ]
+          },
+          "GAP_SpeciesCode": {
+            "$id": "#/properties/GAP Species/properties/GAP_SpeciesCode",
+            "type": "string",
+            "title": "GAP Species Code",
+            "description": "Unique, persistent internal identifier for the GAP species.",
+            "examples": [
+              "aCTRSx"
+            ]
+          },
+          "CommonName": {
+            "$ref": "common_properties.json#/definitions/Common Name"
+          },
+          "ScientificName": {
+            "$ref": "common_properties.json#/definitions/Scientific Name"
+          },
+          "doi": {
+            "$ref": "common_properties.json#/definitions/doi"
+          },
+          "itis_tsn_validMatch": {
+            "$ref": "common_properties.json#/definitions/itis_tsn"
+          },
+          "nsid_acceptedMatch": {
+            "$id": "#/properties/GAP Species/properties/nsid_acceptedMatch",
+            "type": "string",
+            "title": "Nature Serve Identifier",
+            "description": "A unique, persistent identifier to a related species record in the NatureServe Species Database.",
+            "examples": [
+              "102976"
+            ]
+          },
+          "iucn_id_verified": {
+            "$id": "#/properties/GAP Species/properties/iucn_id_verified",
+            "type": "string",
+            "title": "IUCN Red List Identifier",
+            "description": "A unique, persistent identifier to a related species record in the International Union for the Conservation of Science (IUCN) Red List.",
+            "examples": [
+              "59435"
+            ]
+          },
+          "GAP Range Map WMS": {
+            "$id": "#/properties/GAP Species/properties/GAP Range Map WMS",
+            "type": "string",
+            "title": "GAP Range Map WMS",
+            "description": "The URL for the OGC Web Mapping Service for the GAP species range map.",
+            "examples": [
+              "https://www.sciencebase.gov/geoserver/CONUS_Range_2001/wms?service=WMS&version=1.1.0&request=GetCapabilities"
+            ]
+          },
+          "Range Bounding Box": {
+            "$id": "#/properties/GAP Species/properties/Range Bounding Box",
+            "type": "array",
+            "title": "Range Bounding Box",
+            "description": "The bounding box coordinates for the species range.",
+            "items": {
+              "$id": "#/properties/GAP Species/properties/Range Bounding Box/items",
+              "type": "number",
+              "examples": [
+                -123.33999662734388,
+                43.7499953222076,
+                -121.06673138963322,
+                47.111580677995406
+              ]
+            }
+          },
+          "GAP Modeling Database Parameters": {
+            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters",
+            "type": "object",
+            "title": "Gap Modeling Database Parameters",
+            "description": "This data object contains the full set of modeling parameters for the GAP species. It is a direct import of the 'Machine Readable Habitat Database Parameters' file released with the habitat map.",
+            "required": [
+              "doi",
+              "input_layers",
+              "sb_url",
+              "models",
+              "references",
+              "habitat_description",
+              "taxonomic"
+            ],
+            "properties": {
+              "doi": {
+                "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/doi",
+                "type": "string",
+                "enum": [
+                  "https://doi.org/10.5066/F7X0659C"
+                ],
+                "title": "The Doi Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "examples": [
+                  "https://doi.org/10.5066/F7X0659C"
+                ]
+              },
+              "input_layers": {
+                "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/input_layers",
+                "type": "object",
+                "title": "Input Layers",
+                "description": "This data object provides the digital object identifiers for each of the input data layers used in the spatial habitat mapping process for the subject GAP species. More details about the modeling and mapping process can be found in this ScienceBase Item - https://www.sciencebase.gov/catalog/item/527d0a83e4b0850ea0518326. Individual property values here are somewhat shorthand and will be improved with better information and associated references over time.",
+                "required": [
+                  "intEdgeEcoWidth",
+                  "strAvoid",
+                  "ysnHydroWV",
+                  "strForIntBuffer",
+                  "intFromBuffFW",
+                  "intSlopeMin",
+                  "intIntoBuffOW",
+                  "intElevMax",
+                  "intSlopeMax",
+                  "PrimEcoSys",
+                  "AuxEcoSys",
+                  "hucs",
+                  "intIntoBuffWV",
+                  "intPercentCanopy",
+                  "ysnUrbanExclude",
+                  "intElevMin",
+                  "Region",
+                  "ysnHydroOW",
+                  "ysnUrbanInclude",
+                  "strUseForInt",
+                  "intFromBuffWV",
+                  "strStreamVel",
+                  "strEdgeType",
+                  "strSalinity",
+                  "ysnHydroFW",
+                  "intFromBuffOW"
+                ],
+                "properties": {
+                  "intEdgeEcoWidth": {
+                    "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/input_layers/properties/intEdgeEcoWidth",
+                    "type": "object",
+                    "title": "The Intedgeecowidth Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "required": [
+                      "Forest/Open Ecotone Only",
+                      "F/O + Shrubland/Woodland"
+                    ],
+                    "properties": {
+                      "Forest/Open Ecotone Only": {
+                        "$ref": "common_properties.json#/definitions/doi"
+                      },
+                      "F/O + Shrubland/Woodland": {
+                        "$ref": "common_properties.json#/definitions/doi"
+                      }
+                    }
+                  },
+                  "strAvoid": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "ysnHydroWV": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "strForIntBuffer": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "intFromBuffFW": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "intSlopeMin": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "intIntoBuffOW": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "intElevMax": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "intSlopeMax": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "PrimEcoSys": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "AuxEcoSys": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "hucs": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "intIntoBuffWV": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "intPercentCanopy": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "ysnUrbanExclude": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "intElevMin": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "Region": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "ysnHydroOW": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "ysnUrbanInclude": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "strUseForInt": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "intFromBuffWV": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "strStreamVel": {
+                    "$ref": "common_properties.json#/definitions/doi"
+                  },
+                  "strEdgeType": {
+                    "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/input_layers/properties/strEdgeType",
+                    "type": "object",
+                    "title": "The Stredgetype Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "required": [
+                      "Forest/Open Ecotone Only",
+                      "F/O + Shrubland/Woodland"
+                    ],
+                    "properties": {
+                      "Forest/Open Ecotone Only": {
+                        "$ref": "common_properties.json#/definitions/doi"
+                      },
+                      "F/O + Shrubland/Woodland": {
+                        "$ref": "common_properties.json#/definitions/doi"
+                      },
+                      "strSalinity": {
+                        "$ref": "common_properties.json#/definitions/doi"
+                      },
+                      "ysnHydroFW": {
+                        "$ref": "common_properties.json#/definitions/doi"
+                      },
+                      "intFromBuffOW": {
+                        "$ref": "common_properties.json#/definitions/doi"
+                      }
+                    }
+                  },
+                  "sb_url": {
+                    "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/sb_url",
+                    "type": "string",
+                    "title": "ScienceBase Item UDR",
+                    "description": "Link to the ScienceBase Item for the habitat map.",
+                    "examples": [
+                      "https://www.sciencebase.gov/catalog/item/58fa3fd2e4b0b7ea5452492a"
+                    ]
+                  },
+                  "models": {
+                    "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models",
+                    "type": [
+                      "object",
+                      "array"
+                    ],
+                    "title": "Models",
+                    "description": "This data structure contains the actual input parameters used in the modeling workflow to determine the applicable habitats within range and other constraints. Each species will have a different property name here based on the species code and may have more than one set of input variables depending on how the regional modeling process was conducted.",
+                    "patternProperties": {
+                      ".*": {
+                        "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/.*",
+                        "type": "object",
+                        "title": "Modeling Input Parameters",
+                        "description": "A set of modeling input parameters for a GAP species.",
+                        "required": [
+                          "intPercentCanopy",
+                          "intIntoBuffFW",
+                          "ScientificName",
+                          "ysnHydroWV",
+                          "intAuxBuff",
+                          "strForIntBuffer",
+                          "intContPatchSize",
+                          "ysnHandModel",
+                          "intSlopeMin",
+                          "intIntoBuffOW",
+                          "Season",
+                          "intElevMax",
+                          "intSlopeMax",
+                          "PrimEcoSys",
+                          "AuxEcoSys",
+                          "SpeciesCode",
+                          "intIntoBuffWV",
+                          "cbxContPatch",
+                          "SubspeciesName",
+                          "intFromBuffFW",
+                          "memHandModelNotes",
+                          "intElevMin",
+                          "ysnHydroOW",
+                          "Region",
+                          "CommonName",
+                          "ysnUrbanInclude",
+                          "strUseForInt",
+                          "intEdgeEcoWidth",
+                          "intFromBuffWV",
+                          "strStreamVel",
+                          "Modeler",
+                          "strEdgeType",
+                          "strSalinity",
+                          "ysnHydroFW",
+                          "Reviewer",
+                          "ysnUrbanExclude",
+                          "strAvoid",
+                          "intFromBuffOW"
+                        ],
+                        "properties": {
+                          "intPercentCanopy": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/intPercentCanopy",
+                            "type": [
+                              "null",
+                              "integer"
+                            ],
+                            "title": "intPercentCanopy",
+                            "examples": [
+                              null
+                            ]
+                          },
+                          "intIntoBuffFW": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/intIntoBuffFW",
+                            "type": "integer",
+                            "title": "The Intintobufffw Schema",
+                            "examples": [
+                              30
+                            ]
+                          },
+                          "ScientificName": {
+                            "$ref": "common_properties.json#/definitions/Scientific Name"
+                          },
+                          "ysnHydroWV": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/ysnHydroWV",
+                            "type": "boolean",
+                            "enum": [
+                              true,
+                              false
+                            ],
+                            "title": "The Ysnhydrowv Schema"
+                          },
+                          "intAuxBuff": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/intAuxBuff",
+                            "type": [
+                              "null",
+                              "integer"
+                            ],
+                            "title": "The Intauxbuff Schema"
+                          },
+                          "strForIntBuffer": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/strForIntBuffer",
+                            "type": [
+                              "null",
+                              "string"
+                            ],
+                            "title": "The Strforintbuffer Schema"
+                          },
+                          "intContPatchSize": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/intContPatchSize",
+                            "type": [
+                              "null",
+                              "integer"
+                            ],
+                            "title": "The Intcontpatchsize Schema"
+                          },
+                          "ysnHandModel": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/ysnHandModel",
+                            "type": "boolean",
+                            "enum": [
+                              true,
+                              false
+                            ],
+                            "title": "The Ysnhandmodel Schema"
+                          },
+                          "intSlopeMin": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/intSlopeMin",
+                            "type": [
+                              "null",
+                              "integer"
+                            ],
+                            "title": "The Intslopemin Schema"
+                          },
+                          "intIntoBuffOW": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/intIntoBuffOW",
+                            "type": [
+                              "null",
+                              "integer"
+                            ],
+                            "title": "The Intintobuffow Schema"
+                          },
+                          "Season": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/Season",
+                            "type": "string",
+                            "title": "The Season Schema",
+                            "examples": [
+                              "y"
+                            ]
+                          },
+                          "intElevMax": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/intElevMax",
+                            "type": [
+                              "null",
+                              "integer"
+                            ],
+                            "title": "The Intelevmax Schema"
+                          },
+                          "intSlopeMax": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/intSlopeMax",
+                            "type": [
+                              "null",
+                              "integer"
+                            ],
+                            "title": "The Intslopemax Schema"
+                          },
+                          "PrimEcoSys": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/PrimEcoSys",
+                            "type": "array",
+                            "title": "The Primecosys Schema"
+                          },
+                          "AuxEcoSys": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/AuxEcoSys",
+                            "type": "array",
+                            "title": "The Auxecosys Schema"
+                          },
+                          "SpeciesCode": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/SpeciesCode",
+                            "type": "string",
+                            "title": "The Speciescode Schema"
+                          },
+                          "intIntoBuffWV": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/intIntoBuffWV",
+                            "type": [
+                              "null",
+                              "integer"
+                            ],
+                            "title": "The Intintobuffwv Schema"
+                          },
+                          "cbxContPatch": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/cbxContPatch",
+                            "type": "boolean",
+                            "enum": [
+                              true,
+                              false
+                            ],
+                            "title": "The Cbxcontpatch Schema"
+                          },
+                          "SubspeciesName": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/SubspeciesName",
+                            "type": [
+                              "null",
+                              "string"
+                            ],
+                            "title": "The Subspeciesname Schema"
+                          },
+                          "intFromBuffFW": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/intFromBuffFW",
+                            "type": [
+                              "null",
+                              "integer"
+                            ],
+                            "title": "The Intfrombufffw Schema"
+                          },
+                          "memHandModelNotes": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/memHandModelNotes",
+                            "type": [
+                              "null",
+                              "string"
+                            ],
+                            "title": "The Memhandmodelnotes Schema"
+                          },
+                          "intElevMin": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/intElevMin",
+                            "type": [
+                              "null",
+                              "integer"
+                            ],
+                            "title": "The Intelevmin Schema"
+                          },
+                          "ysnHydroOW": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/ysnHydroOW",
+                            "type": "boolean",
+                            "enum": [
+                              true,
+                              false
+                            ],
+                            "title": "The Ysnhydroow Schema"
+                          },
+                          "Region": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/Region",
+                            "type": "string",
+                            "title": "The Region Schema",
+                            "examples": [
+                              "Northwest"
+                            ]
+                          },
+                          "CommonName": {
+                            "$ref": "common_properties.json#/definitions/Common Name"
+                          },
+                          "ysnUrbanInclude": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/ysnUrbanInclude",
+                            "type": "boolean",
+                            "enum": [
+                              true,
+                              false
+                            ],
+                            "title": "The Ysnurbaninclude Schema"
+                          },
+                          "strUseForInt": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/strUseForInt",
+                            "type": [
+                              "null",
+                              "string"
+                            ],
+                            "title": "The Struseforint Schema"
+                          },
+                          "intEdgeEcoWidth": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/intEdgeEcoWidth",
+                            "type": [
+                              "null",
+                              "integer"
+                            ],
+                            "title": "The Intedgeecowidth Schema"
+                          },
+                          "intFromBuffWV": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/intFromBuffWV",
+                            "type": [
+                              "null",
+                              "integer"
+                            ],
+                            "title": "The Intfrombuffwv Schema"
+                          },
+                          "strStreamVel": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/strStreamVel",
+                            "type": [
+                              "null",
+                              "string"
+                            ],
+                            "title": "The Strstreamvel Schema",
+                            "examples": [
+                              "All Types"
+                            ]
+                          },
+                          "Modeler": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/Modeler",
+                            "type": "string",
+                            "title": "The Modeler Schema",
+                            "examples": [
+                              "Ken Boykin"
+                            ]
+                          },
+                          "strEdgeType": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/strEdgeType",
+                            "type": [
+                              "null",
+                              "string"
+                            ],
+                            "title": "The Stredgetype Schema"
+                          },
+                          "strSalinity": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/strSalinity",
+                            "type": [
+                              "null",
+                              "string"
+                            ],
+                            "title": "The Strsalinity Schema",
+                            "examples": [
+                              "Freshwater Only"
+                            ]
+                          },
+                          "ysnHydroFW": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/ysnHydroFW",
+                            "type": "boolean",
+                            "enum": [
+                              true,
+                              false
+                            ],
+                            "title": "The Ysnhydrofw Schema"
+                          },
+                          "Reviewer": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/Reviewer",
+                            "type": "string",
+                            "title": "The Reviewer Schema",
+                            "examples": [
+                              "Jeff Lonneker"
+                            ]
+                          },
+                          "ysnUrbanExclude": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/ysnUrbanExclude",
+                            "type": "boolean",
+                            "enum": [
+                              true,
+                              false
+                            ],
+                            "title": "The Ysnurbanexclude Schema"
+                          },
+                          "strAvoid": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/strAvoid",
+                            "type": [
+                              "null",
+                              "string"
+                            ],
+                            "enum": [
+                              null
+                            ],
+                            "title": "The Stravoid Schema"
+                          },
+                          "intFromBuffOW": {
+                            "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/models/properties/intFromBuffOW",
+                            "type": [
+                              "null",
+                              "integer"
+                            ],
+                            "title": "The Intfrombuffow Schema"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "references": {
+                    "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/references",
+                    "type": "array",
+                    "title": "References",
+                    "description": "The literature references cited by the modeler used in developing the model parameters for the subject species.",
+                    "items": {
+                      "$ref": "#/definitions/items",
+                      "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/references/items",
+                      "type": [
+                        "array",
+                        "string"
+                      ],
+                      "examples": [
+                        "Lannoo, M. 2005. M. Lannoo (Ed.), Amphibian Declines. The Conservation Status of United States Species, University of California Press, Berkeley, CA (2005), p. 1094",
+                        "Good, D. A., and D. B. Wake. 1992. Geographic variation and speciation in the torrent salamanders of the genus Rhyacotriton (Caudata: Rhyacotritonidae). University of California Publications in Zoology, Number 126, University of California, Berkeley, California."
+                      ]
+                    }
+                  },
+                  "habitat_description": {
+                    "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/habitat_description",
+                    "type": "string",
+                    "title": "Habitat Description",
+                    "description": "Narrative description of the habitat.",
+                    "examples": [
+                      "This species of torrent salamander occur only towards the west slopes of the Cascade Mountains from the west bank of the Skookumchuck River in central Washington, near the Thurston-Lewis County line (McAllister 1995; Green et al. 2013). In Oregon, this species occurs south to the Middle Fork of the Willamette River (Good and wake 1992; Lannoo 2005). Stebbins (2003) noted occurrences in Skamania County, Washington, and Lane County in Oregon. Elevational range for this species is varied, but not entirely understood; populations have been reported at 1219 meters, but most have been studied at around 870 meters (Good and Wake 1992; Lannoo 2005). It is important to note that Cascade torrent salamanders are usually not reported downstream, where gradients are lower and present fewer opportunities for suitable habitat (Hunter 1998). Previous research on larval density in the Columbia River gorge, found the Cascade torrent salamander to have one of the highest density in comparison to any other Rhyacotriton salamander averaging 33.3 larvae/m2 (Nussbaum and Tait 1977). Adults at the same locality by Wahkeena Falls averaged 1.9 adults/m2 (Nijhuis and Kaplan 1998). Egg deposition sites are associated with coarse substrate spaces in slow velocity flow seeps. Larvae have been reported under stones along stream channels and in fissure networks found in the streambed and bank (Nussbaum and Tait 1977). As adults, preferred habitat includes underground water courses, rocky rubble found in stream banks, fissures by stream banks, and cracks in wet cliffs (Leonard et al. 1993; Corkran and Thoms 1996). Maximum size of basins where torrent salamanders were reported was 141 ha (348 ac; Hunter 1998)."
+                    ]
+                  },
+                  "taxonomic": {
+                    "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/taxonomic",
+                    "type": "object",
+                    "title": "Taxonomic Identifiers for the Species",
+                    "description": "Contains a group of direct or related taxonomic identifiers for the subject GAP species.",
+                    "required": [
+                      "gap_code",
+                      "ELCode",
+                      "scientific_name",
+                      "ITIS_TSN",
+                      "Global_SEQ_ID",
+                      "common_name"
+                    ],
+                    "properties": {
+                      "gap_code": {
+                        "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/taxonomic/properties/gap_code",
+                        "type": "string",
+                        "title": "GAP Species Code",
+                        "examples": [
+                          "aCTRSx"
+                        ]
+                      },
+                      "ELCode": {
+                        "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/taxonomic/properties/ELCode",
+                        "type": "string",
+                        "title": "ELCode",
+                        "description": "NatureServe element code.",
+                        "examples": [
+                          "AAAAJ01030"
+                        ]
+                      },
+                      "scientific_name": {
+                        "$ref": "common_properties.json#/definitions/Scientific Name"
+                      },
+                      "ITIS_TSN": {
+                        "$ref": "common_properties.json#/definitions/itis_tsn"
+                      },
+                      "Global_SEQ_ID": {
+                        "$id": "#/properties/GAP Species/properties/GAP Modeling Database Parameters/properties/taxonomic/properties/Global_SEQ_ID",
+                        "type": "string",
+                        "title": "Global Sequence ID",
+                        "examples": [
+                          "102976"
+                        ]
+                      },
+                      "common_name": {
+                        "$ref": "common_properties.json#/definitions/Common Name"
+                      }
+                    }
+                  }
+                }
+              },
+              "GAP ITIS Information": {
+                "$id": "#/properties/GAP Species/properties/GAP ITIS Information",
+                "type": "object",
+                "title": "GAP ITIS Information",
+                "description": "Contains a cache of information pulled directly from the ITIS API for the TSN associated with the species. Without a date/time stamp in the data, this information should not be considered current but may be considered an assertion of taxonomy agreed to be the modeler. It's not clear which API for ITIS was used, but the query parameters may refer to the ITIS Solr API.",
+                "required": [
+                  "responseHeader",
+                  "response"
+                ],
+                "properties": {
+                  "responseHeader": {
+                    "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/responseHeader",
+                    "type": "object",
+                    "title": "responseHeader",
+                    "description": "HTTP response header recorded for the API response.",
+                    "required": [
+                      "status",
+                      "QTime",
+                      "params"
+                    ],
+                    "properties": {
+                      "status": {
+                        "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/responseHeader/properties/status",
+                        "type": "integer",
+                        "title": "The Status Schema"
+                      },
+                      "QTime": {
+                        "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/responseHeader/properties/QTime",
+                        "type": "integer",
+                        "title": "The Qtime Schema"
+                      },
+                      "params": {
+                        "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/responseHeader/properties/params",
+                        "type": "object",
+                        "title": "The Params Schema",
+                        "required": [
+                          "q",
+                          "rows",
+                          "wt"
+                        ],
+                        "properties": {
+                          "q": {
+                            "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/responseHeader/properties/params/properties/q",
+                            "type": "string",
+                            "title": "The Q Schema"
+                          },
+                          "rows": {
+                            "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/responseHeader/properties/params/properties/rows",
+                            "type": "string",
+                            "title": "The Rows Schema"
+                          },
+                          "wt": {
+                            "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/responseHeader/properties/params/properties/wt",
+                            "type": "string",
+                            "title": "The Wt Schema"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "response": {
+                    "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response",
+                    "type": "object",
+                    "title": "The Response Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "required": [
+                      "start",
+                      "numFound",
+                      "docs"
+                    ],
+                    "properties": {
+                      "start": {
+                        "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/start",
+                        "type": "integer",
+                        "title": "The Start Schema"
+                      },
+                      "numFound": {
+                        "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/numFound",
+                        "type": "integer",
+                        "title": "The Numfound Schema"
+                      },
+                      "docs": {
+                        "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs",
+                        "type": "array",
+                        "title": "The Docs Schema",
+                        "items": {
+                          "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items",
+                          "type": "object",
+                          "title": "The Items Schema",
+                          "required": [
+                            "hierarchyTSN",
+                            "rankID",
+                            "jurisdiction",
+                            "rank",
+                            "credibilityRating",
+                            "tsn",
+                            "taxonAuthor",
+                            "publication",
+                            "expert",
+                            "createDate",
+                            "hierarchySoFar",
+                            "usage",
+                            "_version_",
+                            "updateDate",
+                            "kingdom",
+                            "parentTSN",
+                            "geographicDivision",
+                            "hierarchicalSort",
+                            "nameWOInd",
+                            "nameWInd",
+                            "vernacular",
+                            "hierarchySoFarWRanks",
+                            "unit2",
+                            "unit1",
+                            "otherSource"
+                          ],
+                          "properties": {
+                            "hierarchyTSN": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/hierarchyTSN",
+                              "type": "array",
+                              "title": "The Hierarchytsn Schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "items": {
+                                "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/hierarchyTSN/items",
+                                "type": "string",
+                                "title": "The Items Schema",
+                                "examples": [
+                                  "$202423$914154$914156$158852$331030$914179$914181$173420$173584$550190$173744$550250$"
+                                ]
+                              }
+                            },
+                            "rankID": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/rankID",
+                              "type": "string",
+                              "title": "The Rankid Schema",
+                              "examples": [
+                                "220"
+                              ]
+                            },
+                            "jurisdiction": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/jurisdiction",
+                              "type": "array",
+                              "title": "The Jurisdiction Schema",
+                              "items": {
+                                "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/jurisdiction/items",
+                                "type": "string",
+                                "title": "The Items Schema",
+                                "examples": [
+                                  "$Continental US$Native$2009-09-01 00:00:00$"
+                                ]
+                              }
+                            },
+                            "rank": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/rank",
+                              "type": "string",
+                              "title": "The Rank Schema",
+                              "examples": [
+                                "Species"
+                              ]
+                            },
+                            "credibilityRating": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/credibilityRating",
+                              "type": "string",
+                              "title": "The Credibilityrating Schema",
+                              "examples": [
+                                "TWG standards met"
+                              ]
+                            },
+                            "tsn": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/tsn",
+                              "type": "string",
+                              "title": "The Tsn Schema",
+                              "examples": [
+                                "550250"
+                              ]
+                            },
+                            "taxonAuthor": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/taxonAuthor",
+                              "type": "string",
+                              "title": "The Taxonauthor Schema",
+                              "examples": [
+                                "Good and Wake, 1992"
+                              ]
+                            },
+                            "publication": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/publication",
+                              "type": "array",
+                              "title": "The Publication Schema",
+                              "items": {
+                                "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/publication/items",
+                                "type": "string",
+                                "title": "The Items Schema",
+                                "examples": [
+                                  "$PUB$2899$Banks, R. C., R. W. McDiarmid, A. L. Gardner, and W. C. Starnes$$Checklist of Vertebrates of the United States, the U.S. Territories, and Canada, draft (2004)$2004-12-31 00:00:00$2004-12-31 00:00:00$$$$$$As-yet (2004) unpublished manuscript from 1998$2017-10-26 00:00:00$",
+                                  "$PUB$3538$Crother, Brian I., Jeff Boundy, Jonathan A. Campbell, et al. / Moriarty, John J., ed.$Scientific and Standard English Names of Amphibians and Reptiles of North America North of Mexico, with Comments Regarding Confidence in Our Understanding$Herpetological Circular, no. 29$2000-11-01 00:00:00$2000-11-01 00:00:00$$$0-916984-54-0$$iv + 82$$2005-08-29 00:00:00$",
+                                  "$PUB$6767$Crother, Brian I., Jeff Boundy, Frank T. Burbrink, et al. / Moriarty, John J., ed.$Scientific and Standard English Names of Amphibians and Reptiles of North America North of Mexico, With Comments Regarding Confidence in Our Understanding, Sixth Ed.$Herpetological Circular No. 37$2008-01-01 00:00:00$2008-01-01 00:00:00$Society for the Study of Amphibians and Reptiles$$0-916984-74-5$$1-84$Available free as a PDF at http://ssarherps.org/pages/HerpCommNames.php$2009-09-01 00:00:00$"
+                                ]
+                              }
+                            },
+                            "expert": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/expert",
+                              "type": "array",
+                              "title": "The Expert Schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "items": {
+                                "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/expert/items",
+                                "type": "string",
+                                "title": "The Items Schema",
+                                "examples": [
+                                  "$EXP$24$Roy W. McDiarmid$U.S. Geological Survey, Biological Resources Division, Patuxent Wildlife Research Center$2004-08-16 00:00:00$"
+                                ]
+                              }
+                            },
+                            "createDate": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/createDate",
+                              "type": "string",
+                              "title": "The Createdate Schema",
+                              "examples": [
+                                "1997-05-06 15:49:08"
+                              ]
+                            },
+                            "hierarchySoFar": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/hierarchySoFar",
+                              "type": "array",
+                              "title": "The Hierarchysofar Schema",
+                              "items": {
+                                "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/hierarchySoFar/items",
+                                "type": "string",
+                                "title": "The Items Schema",
+                                "examples": [
+                                  "550250:$Animalia$Bilateria$Deuterostomia$Chordata$Vertebrata$Gnathostomata$Tetrapoda$Amphibia$Caudata$Rhyacotritonidae$Rhyacotriton$Rhyacotriton cascadae$"
+                                ]
+                              }
+                            },
+                            "usage": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/usage",
+                              "type": "string",
+                              "title": "The Usage Schema",
+                              "examples": [
+                                "valid"
+                              ]
+                            },
+                            "_version_": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/_version_",
+                              "type": "integer",
+                              "title": "The _version_ Schema",
+                              "examples": [
+                                1615971021501759500
+                              ]
+                            },
+                            "updateDate": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/updateDate",
+                              "type": "string",
+                              "title": "The Updatedate Schema",
+                              "examples": [
+                                "2009-09-01 00:00:00"
+                              ]
+                            },
+                            "kingdom": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/kingdom",
+                              "type": "string",
+                              "title": "The Kingdom Schema",
+                              "examples": [
+                                "Animalia"
+                              ]
+                            },
+                            "parentTSN": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/parentTSN",
+                              "type": "string",
+                              "title": "The Parenttsn Schema",
+                              "examples": [
+                                "173744"
+                              ]
+                            },
+                            "geographicDivision": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/geographicDivision",
+                              "type": "array",
+                              "title": "The Geographicdivision Schema",
+                              "items": {
+                                "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/geographicDivision/items",
+                                "type": "string",
+                                "title": "The Items Schema",
+                                "examples": [
+                                  "$North America$1997-05-06 00:00:00$"
+                                ]
+                              }
+                            },
+                            "hierarchicalSort": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/hierarchicalSort",
+                              "type": "string",
+                              "title": "The Hierarchicalsort Schema",
+                              "examples": [
+                                "9990Animalia-9980Bilateria-9975Deuterostomia-9970Chordata-9960Vertebrata-9955Gnathostomata-9950Tetrapoda-9940Amphibia-9900Caudata-9860Rhyacotritonidae-9820Rhyacotriton-9780Rhyacotriton cascadae"
+                              ]
+                            },
+                            "nameWOInd": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/nameWOInd",
+                              "type": "string",
+                              "title": "The Namewoind Schema",
+                              "examples": [
+                                "Rhyacotriton cascadae"
+                              ]
+                            },
+                            "nameWInd": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/nameWInd",
+                              "type": "string",
+                              "title": "The Namewind Schema",
+                              "examples": [
+                                "Rhyacotriton cascadae"
+                              ]
+                            },
+                            "vernacular": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/vernacular",
+                              "type": "array",
+                              "title": "The Vernacular Schema",
+                              "items": {
+                                "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/vernacular/items",
+                                "type": "string",
+                                "title": "The Items Schema",
+                                "examples": [
+                                  "$Cascade Torrent Salamander$English$N$95471$2005-03-28 00:00:00$"
+                                ]
+                              }
+                            },
+                            "hierarchySoFarWRanks": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/hierarchySoFarWRanks",
+                              "type": "array",
+                              "title": "The Hierarchysofarwranks Schema",
+                              "items": {
+                                "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/hierarchySoFarWRanks/items",
+                                "type": "string",
+                                "title": "The Items Schema",
+                                "examples": [
+                                  "550250:$Kingdom:Animalia$Subkingdom:Bilateria$Infrakingdom:Deuterostomia$Phylum:Chordata$Subphylum:Vertebrata$Infraphylum:Gnathostomata$Superclass:Tetrapoda$Class:Amphibia$Order:Caudata$Family:Rhyacotritonidae$Genus:Rhyacotriton$Species:Rhyacotriton cascadae$"
+                                ]
+                              }
+                            },
+                            "unit2": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/unit2",
+                              "type": "string",
+                              "title": "The Unit2 Schema",
+                              "examples": [
+                                "cascadae"
+                              ]
+                            },
+                            "unit1": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/unit1",
+                              "type": "string",
+                              "title": "The Unit1 Schema",
+                              "examples": [
+                                "Rhyacotriton"
+                              ]
+                            },
+                            "otherSource": {
+                              "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/otherSource",
+                              "type": "array",
+                              "title": "The Othersource Schema",
+                              "items": {
+                                "$id": "#/properties/GAP Species/properties/GAP ITIS Information/properties/response/properties/docs/items/properties/otherSource/items",
+                                "type": "string",
+                                "title": "The Items Schema",
+                                "examples": [
+                                  "$SRC$286$database$Amphibian Species of the World: an Online Reference$3$2004-09-28 00:00:00$Frost, Darrel R. 2004. Amphibian Species of the World: an Online Reference. Version 3.0 (22 August, 2004). Electronic Database accessible at http://research.amnh.org/herpetology/amphibia/index.html. American Museum of Natural History, New York, USA$2009-09-01 00:00:00$",
+                                  "$SRC$455$database$Amphibian Species of the World: an Online Reference v5.3$5.3$2009-02-17 00:00:00$Frost, Darrel R. 2009. Amphibian Species of the World: an Online Reference. Version 5.3 (12 February, 2009). Electronic Database accessible at http://research.amnh.org/herpetology/amphibia/ American Museum of Natural History, New York, USA$2009-09-01 00:00:00$"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

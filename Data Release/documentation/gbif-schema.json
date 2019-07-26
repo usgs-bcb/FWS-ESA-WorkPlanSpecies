@@ -1,0 +1,172 @@
+{
+  "definitions": {
+    "items": {
+      "$id": "#items",
+      "type": [
+        "object",
+        "array"
+      ],
+      "title": "Generic container for items in a dataset",
+      "description": "A JSON array or object property containing one or more items in a dataset or data structure within a dataset."
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://data.usgs.gov/property_registry/",
+  "type": "array",
+  "title": "GBIF Species Summary Collection",
+  "description": "A dataset containing records that summarize species found by name in the Global Biodiversity Information Facility (GBIF). Records contain sufficient details to further explore the species in GBIF and a summary of available occurrence data at a point in time.",
+  "items": {
+    "$ref": "#/definitions/items",
+    "properties": {
+      "processing_metadata": {"$ref": "common_properties.json#/definitions/processing_metadata"},
+      "parameters": {"$ref": "common_properties.json#/definitions/parameters",
+        "required": [
+          "Scientific Name",
+          "Name Source"
+        ],
+        "properties": {
+          "Scientific Name": {"$ref": "common_properties.json#/definitions/Scientific Name"},
+          "Name Source": {
+            "$id": "#/items/properties/parameters/properties/Name Source",
+            "type": "string",
+            "enum": [
+              "Lookup Name"
+            ],
+            "title": "Name Source",
+            "description": "A label for the source of scientific name used in the query.",
+            "examples": [
+              "Lookup Name"
+            ]
+          }
+        }
+      },
+      "gbif_species": {
+        "$id": "#/items/properties/gbif_species",
+        "type": "object",
+        "title": "GBIF Species Summary",
+        "description": "Data structure derived from the GBIF species and occurrence APIs to summarize GBIF taxonomy and occurrences and provide a reference to further explore GBIF data.",
+        "required": [
+          "key",
+          "resolvable_identifier",
+          "biological_taxonomy",
+          "scientific_name",
+          "name_with_source",
+          "rank",
+          "status",
+          "synonym",
+          "Occurrence Summary"
+        ],
+        "properties": {
+          "key": {
+            "$id": "#/items/properties/gbif_species/properties/key",
+            "type": "integer",
+            "title": "Key",
+            "description": "The GBIF unique, persistent identifier for the discovered scientific name record.",
+            "examples": [
+              2431178
+            ]
+          },
+          "resolvable_identifier": {"$ref": "common_properties.json#/definitions/resolvable_identifier"},
+          "biological_taxonomy": {"$ref": "common_properties.json#/definitions/biological_taxonomy"},
+          "Scientific Name": {"$ref": "common_properties.json#/definitions/Scientific Name"},
+          "name_with_source": {
+            "$id": "#/items/properties/gbif_species/properties/name_with_source",
+            "type": "string",
+            "title": "Name with Source",
+            "description": "The GBIF scientificName field renamed to indicate its structure and use within this context as the name with a taxonomic source.",
+            "examples": [
+              "Rhyacotriton cascadae Good & Wake, 1992"
+            ]
+          },
+          "rank": {
+            "$id": "#/items/properties/gbif_species/properties/rank",
+            "type": "string",
+            "title": "Taxonomic Rank",
+            "description": "The taxonomic rank of the discovered scientific name. Full GBIF enumeration can be found here - http://api.gbif.org/v1/enumeration/basic/Rank.",
+            "examples": [
+              "SPECIES"
+            ]
+          },
+          "TaxonomicStatus": {
+            "$id": "#/items/properties/gbif_species/properties/status",
+            "type": "string",
+            "title": "Taxonomic Status",
+            "description": "The status of the name according to scientific authorities. Full GBIF enumeration can be found here - http://api.gbif.org/v1/enumeration/basic/TaxonomicStatus",
+            "examples": [
+              "ACCEPTED"
+            ]
+          },
+          "synonym": {
+            "$id": "#/items/properties/gbif_species/properties/synonym",
+            "type": "boolean",
+            "title": "Synonym",
+            "description": "Indicates whether or not the discovered scientific name is considered to be a synonym from taxonomic authorities."
+          },
+          "Occurrence Summary": {
+            "$id": "#/items/properties/gbif_species/properties/Occurrence Summary",
+            "type": "object",
+            "title": "Occurrence Summary",
+            "description": "A summary of key facets for GBIF occurrence data used to provide a snapshot of data available for analysis and use.",
+            "required": [
+              "count",
+              "facets"
+            ],
+            "properties": {
+              "count": {
+                "$id": "#/items/properties/gbif_species/properties/Occurrence Summary/properties/count",
+                "type": "integer",
+                "title": "Count",
+                "description": "Total number of occurrence records for the discovered scientific name."
+              },
+              "facets": {
+                "$id": "#/items/properties/gbif_species/properties/Occurrence Summary/properties/facets",
+                "type": "array",
+                "title": "Facets",
+                "description": "Array of count summaries by available properties returned using GBIF search faceting capability.",
+                "items": {
+                  "$ref": "#/definitions/items",
+                  "properties": {
+                    "field": {
+                      "$id": "#/items/properties/gbif_species/properties/Occurrence Summary/properties/facets/items/properties/field",
+                      "type": "string",
+                      "title": "Field",
+                      "description": "The field/property from the GBIF occurrence schema for which counts of unique values are included. Options include INSTITUTION_CODE (short name or acronym of the provider institutions), YEAR (time series by year of total occurrences), and BASIS_OF_RECORD (type of record from which the species occurrence was determined).",
+                      "enum": [
+                        "INSTITUTION_CODE",
+                        "YEAR",
+                        "BASIS_OF_RECORD"
+                      ]
+                    },
+                    "counts": {
+                      "$id": "#/items/properties/gbif_species/properties/Occurrence Summary/properties/facets/items/properties/counts",
+                      "type": "array",
+                      "title": "Counts",
+                      "description": "Array of counts per value of a property.",
+                      "items": {
+                        "$ref": "#/definitions/items",
+                        "properties": {
+                          "name": {
+                            "$id": "#/items/properties/gbif_species/properties/Occurrence Summary/properties/facets/items/properties/counts/items/properties/name",
+                            "type": "string",
+                            "title": "Property Value",
+                            "description": "Value of the property associated with record count."
+                          },
+                          "count": {
+                            "$id": "#/items/properties/gbif_species/properties/Occurrence Summary/properties/facets/items/properties/counts/items/properties/count",
+                            "type": "integer",
+                            "title": "Count",
+                            "description": "Count of records associated with the property value."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

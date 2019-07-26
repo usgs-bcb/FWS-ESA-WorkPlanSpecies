@@ -1,0 +1,252 @@
+{
+  "definitions": {
+    "items": {
+      "$id": "#items",
+      "type": [
+        "object",
+        "array"
+      ],
+      "title": "Generic container for items in a dataset",
+      "description": "A JSON array or object property containing one or more items in a dataset or data structure within a dataset."
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://data.usgs.gov/property_registry/",
+  "type": "array",
+  "title": "Cache of GAP Metrics for US States",
+  "description": "This dataset contains a set of pre-calculated protection status metrics pulled from an API for a collection of GAP species. Metrics are for US states, showing the calculated acres and percentage land cover with from the 3-meter GAP species habitat maps.",
+  "required": [
+    "GAP_SpeciesCode",
+    "State Metrics"
+  ],
+  "properties": {
+    "GAP_SpeciesCode": {
+      "$id": "#/properties/GAP_SpeciesCode",
+      "type": "string",
+      "title": "GAP Species Code",
+      "description": "The unique, persistent identifier for a GAP species.",
+      "examples": [
+        "aNRWAx"
+      ]
+    },
+    "State Metrics": {
+      "$id": "#/properties/State Metrics",
+      "type": "array",
+      "title": "State Metrics",
+      "description": "The calculated GAP protection status metrics by state.",
+      "items": {"$ref": "#/definitions/items",
+        "required": [
+          "state_fipscode",
+          "state_name",
+          "taxa",
+          "sppcode",
+          "spp_comname",
+          "spp_sciname",
+          "gapstat1ac",
+          "gapstat2ac",
+          "gapstat3ac",
+          "gapstat4ac",
+          "gapstat12ac",
+          "gapstat123ac",
+          "totalac",
+          "gapstat1perc",
+          "gapstat2perc",
+          "gapstat3perc",
+          "gapstat4perc",
+          "gapstat12perc",
+          "gapstat123perc",
+          "gapstat12group",
+          "gapstat123group",
+          "id"
+        ],
+        "properties": {
+          "state_fipscode": {
+            "$id": "#/properties/State Metrics/items/properties/state_fipscode",
+            "type": "string",
+            "title": "State FIPS Code",
+            "description": "The two-digit state FIPS code.",
+            "examples": [
+              "37"
+            ]
+          },
+          "state_name": {
+            "$id": "#/properties/State Metrics/items/properties/state_name",
+            "type": "string",
+            "title": "State Name",
+            "description": "Full name of the US State.",
+            "examples": [
+              "North Carolina"
+            ]
+          },
+          "taxa": {
+            "$id": "#/properties/State Metrics/items/properties/taxa",
+            "type": "string",
+            "enum": [
+              "A",
+              "B",
+              "M",
+              "R"
+            ],
+            "title": "Taxa Abbreviation",
+            "description": "A single character abbreviation for the broad taxa group of the species used for grouping purposes A=amphibians, B=birds, M=mammals, R=reptiles)."
+          },
+          "sppcode": {
+            "$id": "#/properties/State Metrics/items/properties/sppcode",
+            "type": "string",
+            "title": "sppcode",
+            "description": "The unique, persistent identifier for a GAP species.",
+            "examples": [
+              "aNRWAx"
+            ]
+          },
+          "spp_comname": {"$ref": "common_properties.json#/definitions/Common Name"},
+          "spp_sciname": {"$ref": "common_properties.json#/definitions/Scientific Name"},
+          "gapstat1ac": {
+            "$id": "#/properties/State Metrics/items/properties/gapstat1ac",
+            "type": "number",
+            "title": "The Gapstat1ac Schema",
+            "description": "The total number of habitat acres in GAP status 1 lands calculated from 30 meter pixels.",
+            "examples": [
+              17.1244029033
+            ]
+          },
+          "gapstat2ac": {
+            "$id": "#/properties/State Metrics/items/properties/gapstat2ac",
+            "type": "number",
+            "title": "The Gapstat2ac Schema",
+            "description": "The total number of habitat acres in GAP status 2 lands calculated from 30 meter pixels.",
+            "examples": [
+              1105.302369213
+            ]
+          },
+          "gapstat3ac": {
+            "$id": "#/properties/State Metrics/items/properties/gapstat3ac",
+            "type": "number",
+            "title": "The Gapstat3ac Schema",
+            "description": "The total number of habitat acres in GAP status 3 lands calculated from 30 meter pixels.",
+            "examples": [
+              7172.0112886821
+            ]
+          },
+          "gapstat4ac": {
+            "$id": "#/properties/State Metrics/items/properties/gapstat4ac",
+            "type": "number",
+            "title": "The Gapstat4ac Schema",
+            "description": "The total number of habitat acres in GAP status 4 lands calculated from 30 meter pixels.",
+            "examples": [
+              157909.234252716
+            ]
+          },
+          "gapstat12ac": {
+            "$id": "#/properties/State Metrics/items/properties/gapstat12ac",
+            "type": "number",
+            "title": "The Gapstat12ac Schema",
+            "description": "The total number of habitat acres in GAP status 1 and 2 (combined) lands calculated from 30 meter pixels.",
+            "examples": [
+              1122.4267721163
+            ]
+          },
+          "gapstat123ac": {
+            "$id": "#/properties/State Metrics/items/properties/gapstat123ac",
+            "type": "number",
+            "title": "The Gapstat123ac Schema",
+            "description": "The total number of habitat acres in GAP status 1, 2 and 3 (combined) lands calculated from 30 meter pixels.",
+            "examples": [
+              8294.4380607984
+            ]
+          },
+          "totalac": {
+            "$id": "#/properties/State Metrics/items/properties/totalac",
+            "type": "number",
+            "title": "The Totalac Schema",
+            "description": "The total number of habitat acres in any protection status category for the species habitat in the state calculated from 30 meter pixels.",
+            "examples": [
+              166203.6723135144
+            ]
+          },
+          "gapstat1perc": {
+            "$id": "#/properties/State Metrics/items/properties/gapstat1perc",
+            "type": "number",
+            "title": "The Gapstat1perc Schema",
+            "description": "The percentage of habitat in GAP status 1 lands within the state.",
+            "examples": [
+              0.010303263859897
+            ]
+          },
+          "gapstat2perc": {
+            "$id": "#/properties/State Metrics/items/properties/gapstat2perc",
+            "type": "number",
+            "title": "The Gapstat2perc Schema",
+            "description": "The percentage of habitat in GAP status 2 lands within the state.",
+            "examples": [
+              0.665028849138808
+            ]
+          },
+          "gapstat3perc": {
+            "$id": "#/properties/State Metrics/items/properties/gapstat3perc",
+            "type": "number",
+            "title": "The Gapstat3perc Schema",
+            "description": "The percentage of habitat in GAP status 3 lands within the state.",
+            "examples": [
+              4.31519423659505
+            ]
+          },
+          "gapstat4perc": {
+            "$id": "#/properties/State Metrics/items/properties/gapstat4perc",
+            "type": "number",
+            "title": "The Gapstat4perc Schema",
+            "description": "The percentage of habitat in GAP status 4 lands within the state.",
+            "examples": [
+              95.0094736504062
+            ]
+          },
+          "gapstat12perc": {
+            "$id": "#/properties/State Metrics/items/properties/gapstat12perc",
+            "type": "number",
+            "title": "The Gapstat12perc Schema",
+            "description": "The percentage of habitat in GAP status 1 and 2 (combined) lands within the state.",
+            "examples": [
+              0.675332112998705
+            ]
+          },
+          "gapstat123perc": {
+            "$id": "#/properties/State Metrics/items/properties/gapstat123perc",
+            "type": "number",
+            "title": "The Gapstat123perc Schema",
+            "description": "The percentage of habitat in GAP status 1, 2 and 3 (combined) lands within the state.",
+            "examples": [
+              4.99052634959376
+            ]
+          },
+          "gapstat12group": {
+            "$id": "#/properties/State Metrics/items/properties/gapstat12group",
+            "type": "string",
+            "title": "The Gapstat12group Schema",
+            "description": "A basic indication of the relative amount of habitat in GAP status 1 and 2 lands for the species within the state.",
+            "examples": [
+              "<1"
+            ]
+          },
+          "gapstat123group": {
+            "$id": "#/properties/State Metrics/items/properties/gapstat123group",
+            "type": "string",
+            "title": "The Gapstat123group Schema",
+            "description": "A basic indication of the relative amount of habitat in GAP status 1, 2 and 3 lands for the species within the state.",
+            "examples": [
+              "1-10"
+            ]
+          },
+          "id": {
+            "$id": "#/properties/State Metrics/items/properties/id",
+            "type": "integer",
+            "title": "The Id Schema",
+            "description": "An internal identifier for the record.",
+            "examples": [
+              15722
+            ]
+          }
+        }
+      }
+    }
+  }
+}
