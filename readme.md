@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/usgs-bcb/FWS-ESA-WorkPlanSpecies/master)
+
 # Provisional Software Disclaimer
 
 Under USGS Software Release Policy, the software codes here are considered preliminary, not released officially, and posted to this repo for informal sharing among colleagues.
