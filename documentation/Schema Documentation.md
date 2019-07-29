@@ -12,6 +12,4 @@ Toward this end, I established a notional "$id" construct at http://data.usgs.go
 
 ### Common Properties
 
-In the course of working through these particular schemas, I worked up a set of common properties that I think will stand the test of time in some fashion. These are very high level and simple concepts at this point, and I did not dig all that deeply into these particular concepts yet to see what may already exist from other groups. As we move this forward to some type of actual established system, we'll do some further refinement to make these real and meaningful.
-
-* 
+In the course of working through these particular schemas, I worked up a set of common properties that I think will stand the test of time in some fashion. These are very high level and simple concepts at this point, and I did not dig all that deeply into these particular concepts yet to see what may already exist from other groups. As we move this forward to some type of actual established system, we'll do some further refinement to make these real and meaningful. In the near term, for this data package, common properties are contained in the common_properties.json file where they are referenced inline from associated properties in the other schemas.
