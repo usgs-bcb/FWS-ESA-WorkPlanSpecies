@@ -3,6 +3,8 @@ import yaml
 import bispy
 import os
 
+dirname = os.path.dirname(__file__)
+
 bis_utils = bispy.bis.Utils()
 
 statename_to_abbr = {
@@ -64,7 +66,9 @@ statename_to_abbr = {
 
 def workplan_species():
     # Open up the cached workplan species
-    with open("cache/workplan_species.json", "r") as f:
+    workplan_species_path = os.path.join(dirname, '../cache/workplan_species.json')
+    
+    with open(workplan_species_path, "r") as f:
         workplan_species = json.loads(f.read())
 
     lookup_name_list = name_list(workplan_species)
@@ -84,25 +88,13 @@ def state_name(abbreviation):
     return next((k for k, v in statename_to_abbr.items() if v == abbreviation), None)
 
 
-def cache_schema(data_file):
-    with open(f'cache/{data_file}.json', 'r') as f:
-        data = json.loads(f.read())
-        f.close()
-
-    schema = bis_utils.generate_json_schema(data)
-    d_schema = json.loads(schema)
-    
-    with open(f'documentation/{data_file}-schema.json', 'w') as f:
-        f.write(schema)
-    
-    return d_schema
-
-
 def load_schema(data_file, filetype='json', outputtype='dictionary'):
-    if not os.path.exists(f'documentation/{data_file}-schema.json'):
+    schema_path = os.path.join(dirname, f'../documentation/{data_file}-schema.json')
+
+    if not os.path.exists(schema_path):
         return None
     
-    with open(f'documentation/{data_file}-schema.json', 'r') as f:
+    with open(schema_path, 'r') as f:
         if outputtype == 'json':
             return f.read()
         elif outputtype == 'dictionary':
