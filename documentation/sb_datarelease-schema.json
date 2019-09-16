@@ -1,0 +1,580 @@
+{
+   "definitions": {
+      "items": {
+        "$id": "#items",
+        "type": [
+          "object",
+          "array"
+        ],
+        "title": "Generic container for items in a dataset",
+        "description": "A JSON array or object property containing one or more items in a dataset or data structure within a dataset."
+      }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://data.usgs.gov/property_registry/",
+    "title": "Cache of ScienceBase search results for Data Releases related to species",
+    "description": "A cached set of ScienceBase search results from the ScienceBase API using the Python sciencebasepy package.",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/items",
+        "type": "object",
+        "properties": {
+            "processing_metadata": {"$ref": "common_properties.json#/definitions/processing_metadata"},
+            "parameters": {
+                "$ref": "common_properties.json#/definitions/parameters",
+                "type": "object",
+                "properties": {
+                    "fields": {
+                        "type": "string",
+                        "title": "fields to return",
+                        "description": "Comma-delimited list of fields to return in the ScienceBase search"
+                    },
+                    "max": {
+                        "type": "integer",
+                        "title": "max number of records",
+                        "description": "Maximum number of records to return in one search result"
+                    },
+                    "filter0": {
+                        "type": "string",
+                        "title": "first filter to apply",
+                        "description": "In this case, the systemType=Data Release was used as a filter to return only Data Release Products"
+                    },
+                    "q": {
+                        "type": "string",
+                        "title": "query terms",
+                        "description": "In this case, the species scientific name was used to return search results"
+                    }
+                },
+                "required": [
+                    "fields",
+                    "filter0",
+                    "max",
+                    "q"
+                ]
+            },
+            "data": {
+                "$ref": "common_properties.json#/definitions/data",
+                "type": "array",
+                "items": {
+                    "$ref": "#/definitions/items",
+                    "type": "object",
+                    "properties": {
+                        "link": {
+                            "title": "",
+                            "description": "",
+                            "type": "object",
+                            "properties": {
+                                "rel": {
+                                    "type": "string"
+                                },
+                                "url": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "rel",
+                                "url"
+                            ]
+                        },
+                        "relatedItems": {
+                            "type": "object",
+                            "properties": {
+                                "link": {
+                                    "type": "object",
+                                    "properties": {
+                                        "url": {
+                                            "type": "string"
+                                        },
+                                        "rel": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "rel",
+                                        "url"
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "link"
+                            ]
+                        },
+                        "id": {
+                            "title": "ScienceBase ID",
+                            "description": "Unique, persistent identifier used by ScienceBase",
+                            "type": "string"
+                        },
+                        "title": {
+                            "title": "Title",
+                            "description": "Title of the item",
+                            "type": "string"
+                        },
+                        "body": {
+                            "title": "Body",
+                            "description": "Body of the abstract describing the item",
+                            "type": "string"
+                        },
+                        "contacts": {
+                            "title": "Contacts",
+                            "description": "Collection of contacts associated with the item. Uses a unique schema specific to ScienceBase and further described at https://my.usgs.gov/confluence/display/sciencebase/ScienceBase.",
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "type": {
+                                        "type": "string"
+                                    },
+                                    "contactType": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "organization": {
+                                        "type": "object",
+                                        "properties": {
+                                            "displayText": {
+                                                "type": "string"
+                                            },
+                                            "directoryId": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "displayText"
+                                        ]
+                                    },
+                                    "primaryLocation": {
+                                        "type": "object",
+                                        "properties": {
+                                            "officePhone": {
+                                                "type": "string"
+                                            },
+                                            "streetAddress": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "zip": {
+                                                        "type": "string"
+                                                    },
+                                                    "country": {
+                                                        "type": "string"
+                                                    },
+                                                    "city": {
+                                                        "type": "string"
+                                                    },
+                                                    "state": {
+                                                        "type": "string"
+                                                    },
+                                                    "line1": {
+                                                        "type": "string"
+                                                    },
+                                                    "line2": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            },
+                                            "mailAddress": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "zip": {
+                                                        "type": "string"
+                                                    },
+                                                    "country": {
+                                                        "type": "string"
+                                                    },
+                                                    "city": {
+                                                        "type": "string"
+                                                    },
+                                                    "state": {
+                                                        "type": "string"
+                                                    },
+                                                    "line1": {
+                                                        "type": "string"
+                                                    },
+                                                    "mailStopCode": {
+                                                        "type": "string"
+                                                    },
+                                                    "line2": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            },
+                                            "buildingCode": {
+                                                "type": "string"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "building": {
+                                                "type": "string"
+                                            },
+                                            "latitude": {
+                                                "type": "number"
+                                            },
+                                            "longitude": {
+                                                "type": "number"
+                                            },
+                                            "faxPhone": {
+                                                "type": "string"
+                                            },
+                                            "shortName": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "oldPartyId": {
+                                        "type": "integer"
+                                    },
+                                    "active": {
+                                        "type": "boolean"
+                                    },
+                                    "jobTitle": {
+                                        "type": "string"
+                                    },
+                                    "firstName": {
+                                        "type": "string"
+                                    },
+                                    "middleName": {
+                                        "type": "string"
+                                    },
+                                    "lastName": {
+                                        "type": "string"
+                                    },
+                                    "orcId": {
+                                        "type": "string"
+                                    },
+                                    "onlineResource": {
+                                        "type": "string"
+                                    },
+                                    "aliases": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "organizationsPerson": {
+                                        "type": "string"
+                                    },
+                                    "fbmsCodes": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "logoUrl": {
+                                        "type": "string"
+                                    },
+                                    "smallLogoUrl": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "note": {
+                                        "type": "string"
+                                    },
+                                    "personalTitle": {
+                                        "type": "string"
+                                    },
+                                    "cellPhone": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "name",
+                                    "type"
+                                ]
+                            }
+                        },
+                        "webLinks": {
+                            "title": "Web Links",
+                            "description": "Collection of web links associated with the item. Uses a unique schema specific to ScienceBase and further described at https://my.usgs.gov/confluence/display/sciencebase/ScienceBase.",
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string"
+                                    },
+                                    "typeLabel": {
+                                        "type": "string"
+                                    },
+                                    "uri": {
+                                        "type": "string"
+                                    },
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "hidden": {
+                                        "type": "boolean"
+                                    }
+                                },
+                                "required": [
+                                    "hidden",
+                                    "title",
+                                    "type",
+                                    "typeLabel",
+                                    "uri"
+                                ]
+                            }
+                        },
+                        "dates": {
+                            "title": "Dates",
+                            "description": "Collection of dates associated with the item. Uses a unique schema specific to ScienceBase and further described at https://my.usgs.gov/confluence/display/sciencebase/ScienceBase.",
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string"
+                                    },
+                                    "dateString": {
+                                        "type": "string"
+                                    },
+                                    "label": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "dateString",
+                                    "label",
+                                    "type"
+                                ]
+                            }
+                        },
+                        "files": {
+                            "title": "Files",
+                            "description": "Collection of files associated with the item. Uses a unique schema specific to ScienceBase and further described at https://my.usgs.gov/confluence/display/sciencebase/ScienceBase.",
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "originalMetadata": {
+                                        "type": "boolean"
+                                    },
+                                    "dateUploaded": {
+                                        "type": "string"
+                                    },
+                                    "downloadUri": {
+                                        "type": "string"
+                                    },
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "url": {
+                                        "type": "string"
+                                    },
+                                    "processed": {
+                                        "type": "boolean"
+                                    },
+                                    "size": {
+                                        "type": "integer"
+                                    },
+                                    "useForPreview": {
+                                        "type": "boolean"
+                                    },
+                                    "viewUri": {
+                                        "type": "string"
+                                    },
+                                    "checksum": {
+                                        "type": "object",
+                                        "properties": {
+                                            "type": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "type",
+                                            "value"
+                                        ]
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "pathOnDisk": {
+                                        "type": "string"
+                                    },
+                                    "contentType": {
+                                        "type": "string"
+                                    },
+                                    "metadataHtmlViewUri": {
+                                        "type": "string"
+                                    },
+                                    "s3Object": {
+                                        "type": "object",
+                                        "properties": {
+                                            "bucket": {
+                                                "type": "string"
+                                            },
+                                            "size": {
+                                                "type": "integer"
+                                            },
+                                            "filePath": {
+                                                "type": "string"
+                                            },
+                                            "dateUploaded": {
+                                                "type": "string"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "contentType": {
+                                                "type": "string"
+                                            },
+                                            "uploadedBy": {
+                                                "type": "string"
+                                            },
+                                            "status": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "bucket",
+                                            "contentType",
+                                            "dateUploaded",
+                                            "filePath",
+                                            "name",
+                                            "size",
+                                            "status",
+                                            "title",
+                                            "uploadedBy"
+                                        ]
+                                    },
+                                    "s3DownloadRequestPageUri": {
+                                        "type": "string"
+                                    },
+                                    "imageWidth": {
+                                        "type": "integer"
+                                    },
+                                    "imageHeight": {
+                                        "type": "integer"
+                                    },
+                                    "previewImage": {
+                                        "type": "object",
+                                        "properties": {
+                                            "thumbnail": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "uri": {
+                                                        "type": "string"
+                                                    },
+                                                    "width": {
+                                                        "type": "integer"
+                                                    },
+                                                    "height": {
+                                                        "type": "integer"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "height",
+                                                    "uri",
+                                                    "width"
+                                                ]
+                                            },
+                                            "small": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "uri": {
+                                                        "type": "string"
+                                                    },
+                                                    "width": {
+                                                        "type": "integer"
+                                                    },
+                                                    "height": {
+                                                        "type": "integer"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "height",
+                                                    "uri",
+                                                    "width"
+                                                ]
+                                            },
+                                            "medium": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "uri": {
+                                                        "type": "string"
+                                                    },
+                                                    "width": {
+                                                        "type": "integer"
+                                                    },
+                                                    "height": {
+                                                        "type": "integer"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "height",
+                                                    "uri",
+                                                    "width"
+                                                ]
+                                            },
+                                            "large": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "uri": {
+                                                        "type": "string"
+                                                    },
+                                                    "width": {
+                                                        "type": "integer"
+                                                    },
+                                                    "height": {
+                                                        "type": "integer"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "height",
+                                                    "uri",
+                                                    "width"
+                                                ]
+                                            }
+                                        },
+                                        "required": [
+                                            "large",
+                                            "medium",
+                                            "small",
+                                            "thumbnail"
+                                        ]
+                                    }
+                                },
+                                "required": [
+                                    "contentType",
+                                    "dateUploaded",
+                                    "downloadUri",
+                                    "name",
+                                    "originalMetadata",
+                                    "pathOnDisk",
+                                    "size",
+                                    "url"
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "body",
+                        "contacts",
+                        "dates",
+                        "files",
+                        "id",
+                        "link",
+                        "relatedItems",
+                        "title"
+                    ]
+                }
+            }
+        },
+        "required": [
+            "parameters",
+            "processing_metadata"
+        ]
+    }
+}

@@ -25,7 +25,7 @@
           "Name Source"
         ],
         "properties": {
-          "Scientific Name": {"$ref": "common_properties.json#/definitions/Scientific Name"},
+          "Scientific Name": {"$ref": "common_properties.json#/definitions/species_scientific_name"},
           "Name Source": {
             "$id": "#/items/properties/parameters/properties/Name Source",
             "type": "string",
@@ -40,9 +40,8 @@
           }
         }
       },
-      "NatureServe Species": {
-        "$id": "#/items/properties/NatureServe Species",
-        "type": "object",
+      "data": {
+        "$ref": "common_properties.json#/definitions/data",
         "title": "NatureServe Species",
         "description": "Data object that is a transformation of the raw XML output from the NatureServe Species public API to JSON. Property names have not been fully described in this form. XSD species schemas are referenced here - https://services.natureserve.org/TechnicalResources/v1.0Schemas/Species/SpeciesSchemaDescription.jsp (not online at the last check). The schema reflects a design that was tailored for particular uses with a certain amount of repetitiveness that we will eventually clean up for use.",
         "required": [

@@ -45,6 +45,9 @@ Some of the steps in this system build upon each other while others can be opera
 * Check GAP Species and GAP Suggested Range - Establishes links to the terrestrial vertebrate species managed through the USGS Gap Analysis Project; notably includes a suite of information on species habitat requirements, range and habitat maps, and a summarization process that indicates protection status within states where habitat classes have been mapped
 * Check xDD Library - Searches a library of scientific papers and reports for species names; provides snippets of text form papers and access information
 * Summarize GBIF Species - Searches GBIF for a species and uses suggested taxa to summarize occurrence data; notably includes a couple of facet reports that indicate the type of occurrence records in GBIF and where they come from
+* Check ScienceBase Data Release Products - Searches ScienceBase for official Data Release Products associated with the species names to summarize available data products that may be of interest
+
+8) Summarize Properties to CSV - This notebook makes a number of choices about how to "flatten" the data structures into a simpler set of high level properties that can be opened in a spreadsheet program and examined in various ways. The results are output to the cache folder.
 
 # Data Management Plan and Considerations
 

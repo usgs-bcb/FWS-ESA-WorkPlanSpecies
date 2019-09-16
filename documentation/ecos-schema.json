@@ -24,12 +24,8 @@
       "processing_metadata": {
         "$ref": "common_properties.json#/definitions/processing_metadata"
       },
-      "ecos_species_summary": {
-        "$id": "#ecos_species_summary",
-        "type": [
-          "object",
-          "null"
-        ],
+      "data": {
+        "$ref": "common_properties.json#/definitions/data",
         "title": "ECOS Species Summary Information",
         "description": "An object containing all of the accessible and useful information bits, including lists of available documents, from an ECOS Species web page.",
         "required": [

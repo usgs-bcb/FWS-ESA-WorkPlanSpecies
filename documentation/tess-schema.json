@@ -1,6 +1,6 @@
 {
   "definitions": {
-    "items": {0
+    "items": {
       "$id": "#/items",
       "type": [
         "object",
@@ -18,11 +18,8 @@
   "items": {"$ref": "#/definitions/items"},
     "properties": {
       "processing_metadata": {"$ref": "common_properties.json#/definitions/processing_metadata"},
-      "tess_species": {
-        "$id": "#/items/properties/tess_species",
-        "type": "object",
-        "title": "The Tess_species Schema",
-        "description": "An explanation about the purpose of this instance.",
+      "data": {
+        "$ref": "common_properties.json#/definitions/data",
         "required": [
           "SPECIES_DETAIL"
         ],

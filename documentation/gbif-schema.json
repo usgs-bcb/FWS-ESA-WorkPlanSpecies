@@ -25,7 +25,7 @@
           "Name Source"
         ],
         "properties": {
-          "Scientific Name": {"$ref": "common_properties.json#/definitions/Scientific Name"},
+          "Scientific Name": {"$ref": "common_properties.json#/definitions/species_scientific_name"},
           "Name Source": {
             "$id": "#/items/properties/parameters/properties/Name Source",
             "type": "string",
@@ -40,9 +40,8 @@
           }
         }
       },
-      "gbif_species": {
-        "$id": "#/items/properties/gbif_species",
-        "type": "object",
+      "data": {
+        "$ref": "common_properties.json#/definitions/data",
         "title": "GBIF Species Summary",
         "description": "Data structure derived from the GBIF species and occurrence APIs to summarize GBIF taxonomy and occurrences and provide a reference to further explore GBIF data.",
         "required": [
@@ -68,7 +67,7 @@
           },
           "resolvable_identifier": {"$ref": "common_properties.json#/definitions/resolvable_identifier"},
           "biological_taxonomy": {"$ref": "common_properties.json#/definitions/biological_taxonomy"},
-          "Scientific Name": {"$ref": "common_properties.json#/definitions/Scientific Name"},
+          "Scientific Name": {"$ref": "common_properties.json#/definitions/species_scientific_name"},
           "name_with_source": {
             "$id": "#/items/properties/gbif_species/properties/name_with_source",
             "type": "string",

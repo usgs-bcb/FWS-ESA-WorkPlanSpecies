@@ -29,7 +29,7 @@
         ],
         "properties": {
           "Scientific Name": {
-            "$ref": "common_properties.json#/definitions/Scientific Name"
+            "$ref": "common_properties.json#/definitions/species_scientific_name"
           },
           "Name Source": {
             "$id": "#/items/properties/parameters/properties/Name Source",
@@ -45,11 +45,8 @@
           }
         }
       },
-      "GAP Species": {
-        "$id": "#/properties/GAP Species",
-        "type": "object",
-        "title": "The Gap species Schema",
-        "description": "An explanation about the purpose of this instance.",
+      "data": {
+        "$ref": "common_properties.json#/definitions/data",
         "required": [
           "GAP Habitat Map Item",
           "GAP Range Map Item",
@@ -1199,4 +1196,3 @@
     }
   }
 }
-

@@ -10,6 +10,78 @@
       "title": "Dataset Items",
       "description": "A JSON object or array containing the item or items in a dataset."
     },
+    "processing_metadata": {
+      "$id": "#processing_metadata",
+      "type": [
+        "object",
+        "null"
+      ],
+      "title": "Object containing information about the processing of a record in a dataset",
+      "description": "A container object that contains properties describing the specific processing details for a given record within a dataset. Contains standardized properties describing the processing.",
+      "required": [
+        "status",
+        "date_processed",
+        "api"
+      ],
+      "properties": {
+        "status": {
+          "$id": "#status",
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "The overall status of the record processing step",
+          "description": "Describes one of three standardized states for the processing of a given record.",
+          "default": "failure",
+          "examples": [
+            "success",
+            "failure",
+            "error"
+          ]
+        },
+        "date_processed": {
+          "$id": "#date_processed",
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "The data and time that the process for a given record was conducted",
+          "description": "Date time stamp in ISO8601 format denoting the point when the processing of the record occurred. Can be used to evaluate record currency with original source and trigger updates.",
+          "examples": [
+            "2019-07-23T16:29:02.377774"
+          ]
+        },
+        "api": {
+          "$id": "#api",
+          "type": [
+            "string",
+            "array",
+            "null"
+          ],
+          "title": "API(S) used in building the record",
+          "description": "Some form of resolvable Application Programming Interface such as a REST URL that was used to generate the record being documented. Often passed through a function of some kind to process the results. Can be a single string or an array of strings.",
+          "format": "uri"
+        },
+        "status_message": {
+          "$id": "#status_message",
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Message with further details about the status of a record",
+          "description": "Per dataset, this string contains context-specific details about the status or state of a record that was processed."
+        },
+        "details": {
+          "$id": "#details",
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Data Processing Details",
+          "description": "A list of statements or other data structures describing additional specific details about the process of generating a record."
+        }
+      }
+    },
     "parameters": {
       "$id": "#parameters",
       "type": [
@@ -19,6 +91,16 @@
       ],
       "title": "Parameters",
       "description": "An object or array that contains context-specific parameters as key/value pairs used as input to generate a record in a dataset or configure a process."
+    },
+    "data": {
+        "$id": "#data",
+        "type": [
+          "object",
+          "array",
+          "null"
+        ],
+        "title": "Standardized Data Container",
+        "description": "An object or array containing one or more records of data retrieved for a given data gatherer."
     },
     "doi": {
       "$id": "#doi",
@@ -157,7 +239,7 @@
         "ITIS TSN"
       ]
     },
-    "Scientific Name": {
+    "species_scientific_name": {
       "$id": "#Scientific Name",
       "type": [
         "string",
@@ -172,8 +254,8 @@
         "SCINAME"
       ]
     },
-    "Common Name": {
-      "$id": "#Common Name",
+    "species_common_name": {
+      "$id": "#common_name",
       "type": [
         "string",
         "null"
@@ -184,80 +266,9 @@
         "Virginia stone"
       ],
       "aliases": [
-        "COMNAME"
+        "COMNAME",
+        "Common Name"
       ]
-    },
-    "processing_metadata": {
-      "$id": "#processing_metadata",
-      "type": [
-        "object",
-        "null"
-      ],
-      "title": "Object containing information about the processing of a record in a dataset",
-      "description": "A container object that contains properties describing the specific processing details for a given record within a dataset. Contains standardized properties describing the processing.",
-      "required": [
-        "status",
-        "date_processed",
-        "api"
-      ],
-      "properties": {
-        "status": {
-          "$id": "#status",
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "The overall status of the record processing step",
-          "description": "Describes one of three standardized states for the processing of a given record.",
-          "default": "failure",
-          "examples": [
-            "success",
-            "failure",
-            "error"
-          ]
-        },
-        "date_processed": {
-          "$id": "#date_processed",
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "The data and time that the process for a given record was conducted",
-          "description": "Date time stamp in ISO8601 format denoting the point when the processing of the record occurred. Can be used to evaluate record currency with original source and trigger updates.",
-          "examples": [
-            "2019-07-23T16:29:02.377774"
-          ]
-        },
-        "api": {
-          "$id": "#api",
-          "type": [
-            "string",
-            "array",
-            "null"
-          ],
-          "title": "API(S) used in building the record",
-          "description": "Some form of resolvable Application Programming Interface such as a REST URL that was used to generate the record being documented. Often passed through a function of some kind to process the results. Can be a single string or an array of strings.",
-          "format": "uri"
-        },
-        "status_message": {
-          "$id": "#status_message",
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Message with further details about the status of a record",
-          "description": "Per dataset, this string contains context-specific details about the status or state of a record that was processed."
-        },
-        "details": {
-          "$id": "#details",
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Data Processing Details",
-          "description": "A list of statements or other data structures describing additional specific details about the process of generating a record."
-        }
-      }
     },
     "biological_taxonomy": {
       "$id": "#biological_taxonomy",

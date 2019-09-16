@@ -22,31 +22,10 @@
   "items": {
     "$ref": "#/definitions/items",
     "properties": {
-      "processing_metadata": {
-        "$ref": "common_properties.json#/definitions/processing_metadata"
-      },
-      "parameters": {
-        "$ref": "common_properties.json#/definitions/parameters",
-        "properties": {
-          "Scientific Name": {"$ref": "common_properties.json#/definitions/Scientific Name"},
-          "Name Source": {
-            "$id": "#Name Source",
-            "type": "string",
-            "title": "Source of a name used as a parameter",
-            "description": "A string denoting the source for the scientific name used in the IUCN Red List search. Useful for determining the provenance of the name used.",
-            "examples": [
-              "Lookup Name",
-              "Valid ITIS Scientific Name"
-            ]
-          }
-        }
-      },
-      "iucn_species_summary": {
-        "$id": "#iucn_species_summary",
-        "type": "object",
-        "title": "IUCN Red List Species Summary Container",
-        "description": "This container houses the summarized results for an IUCN Red List species when the species was found. Otherwise, it will be empty or not present.",
-        "default": null,
+      "processing_metadata": {"$ref": "common_properties.json#/definitions/processing_metadata"},
+      "parameters": {"$ref": "common_properties.json#/definitions/parameters"},
+      "data": {
+        "$ref": "common_properties.json#/definitions/data",
         "required": [
           "iucn_taxonid",
           "iucn_status_code",
