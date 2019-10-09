@@ -92,8 +92,8 @@ dependencies:
   - zeromq=4.3.2=h6de7cb9_2
   - zlib=1.2.11=h01d97ff_1006
   - pip:
+    - git+https://github.com/usgs-bcb/bispy@freeze-fws-workplan-species
     - beautifulsoup4==4.8.1
-    - bispy==0.0.9
     - boto3==1.9.245
     - botocore==1.12.245
     - bs4==0.0.1
