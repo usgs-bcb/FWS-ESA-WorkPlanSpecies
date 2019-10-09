@@ -26,7 +26,11 @@ Most of the processes for searching and assembling species information in the bi
 
 As a starting point for this work, we used a spreadsheet prepared internally to USGS that included a listing of the species taken from the original USFWS PDF file released online along with value-added information from a survey of USGS Science Centers and Cooperative Research Units seeking input on what previous and current research activities and capabilities might apply. A snapshot of this spreadsheet is included in the sources folder and is referenced in a number of the processing codes. An additional spreadsheet was prepared with a set of links for species to the USFWS Ecological Conservation Online System (ECOS) extracted from those embedded as Excel hyperlinks in one of the worksheets along with a set of explicit links to additional information sources for USGS Science Centers from the ScienceBase Directory.
 
-# Workflow
+# Contents
+
+The work in this project is organized into several folders for convenience. Folder names correspond to the section descriptions describing their contents below.
+
+## workflow
 
 Some of the steps in this system build upon each other while others can be operated independently. The first couple of steps do build out the foundation for subsequent work and need to be run first.
 
@@ -51,13 +55,21 @@ Some of the steps in this system build upon each other while others can be opera
 * Summarize GBIF Species - Searches GBIF for a species and uses suggested taxa to summarize occurrence data; notably includes a couple of facet reports that indicate the type of occurrence records in GBIF and where they come from
 * Check ScienceBase Data Release Products - Searches ScienceBase for official Data Release Products associated with the species names to summarize available data products that may be of interest
 
-# Reports
+## reports
 
 To help make the data easier to digest, we provide a couple of report options, one that explores some dynamics with the taxonomy and one that summarizes high level properties into a simplified CSV file.
 
 1) Summarize Properties to CSV - This notebook makes a number of choices about how to "flatten" the data structures into a simpler set of high level properties that can be opened in a spreadsheet program and examined in various ways. The results are output to the cache folder.
 
 2) Examine Taxonomy - This notebook works through all of the cases where our process was unable to find valid or accepted records in ITIS by either following the Taxonomic Serial Number found from the Ecological Conservation Online System records or by searching the scientific name in the FWS Work Plan.
+
+## cache
+
+Data outputs from the workflow steps are cached as JSON or CSV files and stored in the cache folder. These are point in time snapshots of the data assembled for the FWS Work Plan species with embedded datetime stamps indicating when the records were produced.
+
+## documentation
+
+The documentation folder contains JSON Schema documents for each JSON data file in the data cache that documents the structure and properties of the data built through the processing workflow. The schemas are exercised at the end of each workflow to validate the data produced. These documents stand in place of more traditional entity and attribute information in the FGDC CSDGM standard or ISO Feature Catalog. There is also an ISO19115 metadata XML document at the root of the project that describes the whole data release product.
 
 # Data Management Plan and Considerations
 
