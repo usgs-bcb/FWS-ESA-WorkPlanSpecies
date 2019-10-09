@@ -1,4 +1,4 @@
-git+https://github.com/usgs-bcb/bispy@freeze-fws-workplan-species
+git+git://github.com/usgs-bcb/bispy.git@v0.0.9
 appnope==0.1.0
 attrs==19.2.0
 backcall==0.1.0

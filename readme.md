@@ -16,7 +16,9 @@ The code in this repository is all Python based in Jupyter Notebooks. You can ru
 
 ``conda create -f environment.yml``
 
-The actual logic for the various processes run in the workflow folder come from an experimental Python package called [bispy](https://github.com/usgs-bcb/bispy) that is released as provisional software. This package and its dependencies are installed from source in the environment.yml or requirements.txt files. We welcome input on the processes run and the data produced.
+The actual logic for the various processes run in the workflow folder come from an experimental Python package called [bispy](https://github.com/usgs-bcb/bispy) that is released as provisional software. This package and its dependencies are installed from source in the environment.yml or requirements.txt files. We welcome input on the processes run and the data produced. Due to the changing nature of the bispy experiment, we are maintaining branches of the code at particular checkpoints known to work with the various use cases we are running through. This is reflected in the environment files, or the major dependency for this work can be installed with the following:
+
+``pip install git+git://github.com/usgs-bcb/bispy.git@v0.0.9``
 
 Most of the processes for searching and assembling species information in the bispy package are from completely open and publicly accessible application programming interfaces (APIs) or web systems. The one exception is the IUCN Red List, which requires an IUCN API key to be established as an environment variable called "token_iucn." You can take advantage of the information we have already summarized from the IUCN Red List for this particular use in this package, but you will need to obtain your own IUCN Red List API token if you want to run that aspect of the data assembly process.
 
